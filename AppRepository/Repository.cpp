@@ -4,7 +4,7 @@
 #include "Repository.h"
 #include <iostream>
 #include <fstream>
-
+//modificare
 void repository::Repository::addScooter(const Scooter &scooter)
 {
     Scooters.push_back(scooter);
