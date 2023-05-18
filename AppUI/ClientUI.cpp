@@ -7,6 +7,8 @@
 
 using std::cout, std::cin, std::endl;
 
+// Sunt smecher
+
 void clientUi::ClientUI::run()
 {
     controller->load();
