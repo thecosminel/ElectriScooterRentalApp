@@ -1,0 +1,3 @@
+C:/Users/cosmi/OneDrive/Desktop/ElectricScooterApp/cmake-build-debug/CMakeFiles/ElectricScooterRentalApp.dir
+C:/Users/cosmi/OneDrive/Desktop/ElectricScooterApp/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/cosmi/OneDrive/Desktop/ElectricScooterApp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
