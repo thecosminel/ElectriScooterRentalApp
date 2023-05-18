@@ -13,7 +13,54 @@ using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl;
 
 namespace repository
 {
-    class Repository {
+    class CrudRepository{
+    private:
+        vector<Scooter> Scooters;
+
+    public:
+        ///default constructor
+        CrudRepository() = default;
+
+        CrudRepository(CrudRepository &repository) = default;
+        CrudRepository& operator=(const CrudRepository& repository) = default;
+
+        ///default destructor
+        ~CrudRepository() = default;
+
+        /// add an electric scooter to the repository
+        /// \param scooter
+        virtual void addScooter(const Scooter& scooter) = 0;
+
+        /// remove an electric scooter from the repository
+        /// \param scooter
+        virtual void deleteScooter(const Scooter& scooter) = 0;
+
+        /// update an existing electric oldScooter in the repository
+        /// \param oldScooter
+        virtual void updateScooterInfo(const Scooter& oldScooter, const Scooter& updatedScooter) = 0;
+
+        virtual shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) = 0;
+        // kmMin = -1 -> no min limit ..... same for kmMax
+        virtual shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax) = 0;
+        virtual shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) = 0;
+        virtual shared_ptr<vector<Scooter>> getAllParkedScooters() = 0;
+        virtual Scooter getScooterById (string id) = 0;
+
+        /// get all the electric scooters in the repository
+        /// \return
+        [[nodiscard]] virtual  shared_ptr<vector<Scooter>> getAllScootersFromRepo() const = 0;
+
+        /// method for saving to file
+        /// \param fileName
+        virtual void saveToFile(const string &fileName) = 0;
+
+        /// method for loading from file
+        /// \param fileName
+        virtual void loadFromFile(const string &fileName) = 0;
+    };
+
+
+    class Repository : CrudRepository{
     private:
         vector<Scooter> Scooters;
 
@@ -29,7 +76,7 @@ namespace repository
 
         /// add an electric scooter to the repository
         /// \param scooter
-        void addScooter(const Scooter& scooter);
+        void addScooter(const Scooter& scooter) override;
 
         /// remove an electric scooter from the repository
         /// \param scooter
@@ -41,14 +88,14 @@ namespace repository
 
         /// get all the electric scooters in the repository
         /// \return
-        [[nodiscard]] vector<Scooter> getAllScootersFromRepo() const;
+        [[nodiscard]] shared_ptr<vector<Scooter>> getAllScootersFromRepo() const override;
 
         /// method for saving to file
         /// \param fileName
-        void saveToFile(const string &fileName);
+        void saveToFile(const string &fileName) override;
 
         /// method for loading from file
         /// \param fileName
-        void loadFromFile(const string &fileName);
+        void loadFromFile(const string &fileName) override;
     };
 }
