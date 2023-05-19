@@ -49,7 +49,10 @@ void repository::Repository::updateScooterInfo(const Scooter& oldScooter, const 
 //vector<Scooter> repository::Repository::getAllScootersFromRepo() const
 shared_ptr<vector<Scooter>>  repository::Repository::getAllScootersFromRepo() const
 {
-    return Scooters;
+    auto result = std::make_shared<std::vector<Scooter>>();
+    for (const auto& scooter : Scooters)
+        result->push_back(scooter);
+    return result;
 }
 
 void repository::Repository::saveToFile(const std::string& fileName)
@@ -172,5 +175,5 @@ Scooter repository::Repository::getScooterById(string id)
             return scooter;
         }
     }
-    return Scooter();
+    return {};
 }
