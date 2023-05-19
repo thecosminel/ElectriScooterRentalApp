@@ -90,13 +90,6 @@ namespace repository
         /// \return
         [[nodiscard]] shared_ptr<vector<Scooter>> getAllScootersFromRepo() const override;
 
-        shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) override;
-        // kmMin = -1 -> no min limit ..... same for kmMax
-        shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax) override;
-        shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) override;
-        shared_ptr<vector<Scooter>> getAllParkedScooters() override;
-        Scooter getScooterById (string id) override;
-
         /// method for saving to file
         /// \param fileName
         void saveToFile(const string &fileName) override;
