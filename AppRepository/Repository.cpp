@@ -4,6 +4,7 @@
 #include "Repository.h"
 #include <iostream>
 #include <fstream>
+#include <memory>
 //modificare
 void repository::Repository::addScooter(const Scooter &scooter)
 {
@@ -45,9 +46,13 @@ void repository::Repository::updateScooterInfo(const Scooter& oldScooter, const 
     }
 }
 
-vector<Scooter> repository::Repository::getAllScootersFromRepo() const
+//vector<Scooter> repository::Repository::getAllScootersFromRepo() const
+shared_ptr<vector<Scooter>>  repository::Repository::getAllScootersFromRepo() const
 {
-    return Scooters;
+    auto result = std::make_shared<std::vector<Scooter>>();
+    for (const auto& scooter : Scooters)
+        result->push_back(scooter);
+    return result;
 }
 
 void repository::Repository::saveToFile(const std::string& fileName)
@@ -105,4 +110,70 @@ void repository::Repository::loadFromFile(const std::string& fileName)
     {
         std::cout << "Error opening file: " << fileName << std::endl;
     }
+}
+
+shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByLocation(string location)
+{
+    auto result = std::make_shared<std::vector<Scooter>>();
+    for (const Scooter& scooter : Scooters)
+    {
+        if (scooter.getLocation() == location)
+        {
+            result->push_back(scooter);
+        }
+    }
+    return result;
+}
+
+shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByKmBetweenTwoValues(double kmMin, double kmMax)
+{
+    auto result = std::make_shared<std::vector<Scooter>>();
+    for (const Scooter& scooter : Scooters)
+    {
+        double km = scooter.getKilometers();
+        if ((kmMin == -1 || km >= kmMin) && (kmMax == -1 || km <= kmMax))
+        {
+            result->push_back(scooter);
+        }
+    }
+    return result;
+}
+
+shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByAgeBetweenTwoDates(string dateMin, string dateMax)
+{
+    auto result = std::make_shared<std::vector<Scooter>>();
+    for (const Scooter& scooter : Scooters)
+    {
+       string date = scooter.getDate();
+        if (date >= dateMin && date <= dateMax)
+        {
+            result->push_back(scooter);
+        }
+    }
+    return result;
+}
+
+shared_ptr<vector<Scooter>> repository::Repository::getAllParkedScooters()
+{
+    auto result = std::make_shared<std::vector<Scooter>>();
+    for (const Scooter& scooter : Scooters)
+    {
+        if (scooter.getStatus() == ScooterStatus::PARKED)
+        {
+            result->push_back(scooter);
+        }
+    }
+    return result;
+}
+
+Scooter repository::Repository::getScooterById(string id)
+{
+    for (const Scooter& scooter : Scooters)
+    {
+        if (scooter.getIdentifier() == id)
+        {
+            return scooter;
+        }
+    }
+    return {};
 }
