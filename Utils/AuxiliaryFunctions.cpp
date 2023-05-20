@@ -123,6 +123,20 @@ bool checkDateFormat(const string& date)
     return true;
 }
 
+string enterUserName()
+{
+    string userName;
+    cout << endl;
+    cout << "Enter user name (must be alphanumeric): ";
+    cin >> userName;
+    while (!checkAlphanumericString(userName))
+    {
+        cout << endl << "Please enter an alphanumeric ID: ";
+        cin >> userName;
+    }
+    return userName;
+}
+
 string enterModel()
 {
     string model;
@@ -192,6 +206,36 @@ string enterID()
         cin >> ID;
     }
     return ID;
+}
+
+bool choseIfSaveActions()
+{
+    string choice;
+    cout << endl << "Save your future actions?";
+    cout << endl << "1. Yes";
+    cout << endl << "2. No";
+    cout << endl << "My choice: "; cin >> choice;
+    while (choice != "1" && choice != "2" && choice != "3")
+    {
+        cout << endl << "Chose 1 or 2!!";
+        cout << endl << "My choice: "; cin >> choice;
+    }
+    if (choice == "1")
+        return true;
+    else
+        return false;
+}
+
+bool checkAlphanumericString(const string& str)
+{
+    for(char c : str) // NOLINT
+    {
+        if (!isalnum(c))
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 bool compareManufacturingDates(const string& manufacturingDate, const string& scooterManufacturingDate) {

@@ -10,6 +10,8 @@ namespace managerUi
     class ManagerUI {
     private:
         shared_ptr<Controller> controller;
+        bool saveActions;
+
     public:
 
         /// Explicit constructor
@@ -25,7 +27,11 @@ namespace managerUi
         ManagerUI& operator=(const ManagerUI& repository) = default;
 
         /// Method to run manager UI
-        void run();
+        /// \return true to go back to main UI, false to exit
+        bool run();
+
+        /// Chose if actions should be saved
+        void logIn();
 
         /// Method for exiting the app
         void exit();

@@ -7,10 +7,11 @@
 
 using std::cout, std::cin, std::endl;
 
-void managerUi::ManagerUI::run()
+bool managerUi::ManagerUI::run()
 {
     controller->load();
     cout << "\n\n\nManager interface -->" << endl;
+    logIn();
     char choice;
     do
     {
@@ -65,16 +66,20 @@ void managerUi::ManagerUI::run()
                 cout << "Display all scooters sorted ascending by ID: ";
                 displayAllScootersSortedByID();
                 break;
+            case 'R':
+            case 'r':
+                return true;
             case 'X':
             case 'x':
                 exit();
-                return;
+                return false;
             default:
                 cout << "Not an option...";
                 break;
         }
     }
     while (choice);
+    return false;
 }
 
 void managerUi::ManagerUI::addNewScooter()
@@ -185,10 +190,21 @@ void managerUi::ManagerUI::displayAllScootersSortedByID()
 managerUi::ManagerUI::ManagerUI(shared_ptr<Controller> controller)
 {
     this->controller = std::move(controller);
+    this->saveActions = false;
 }
 
 void managerUi::ManagerUI::exit()
 {
     cout << "\n\n Closing app.....";
-    controller->save();
+    if (saveActions)
+    {
+        controller->save();
+    }
+}
+
+void managerUi::ManagerUI::logIn()
+{
+    // Chose if actions are to be persistent saved
+    this->saveActions = choseIfSaveActions();
+    cout << endl;
 }

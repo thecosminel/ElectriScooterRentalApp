@@ -17,7 +17,7 @@ namespace mainUi
     public:
         /// Constructor
         /// \param ctrl
-        MainUI(shared_ptr<ManagerUI> &managerUI, shared_ptr<ClientUI> &clientUi);
+        MainUI(shared_ptr<ManagerUI> managerUI, shared_ptr<ClientUI> clientUi);
 
         /// Trivial destructor
         ~MainUI()=default;
