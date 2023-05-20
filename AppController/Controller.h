@@ -102,7 +102,7 @@ namespace controller
         shared_ptr<vector<Scooter>> filterParkedScooters();
 
         // Use shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser
-        shared_ptr<vector<Scooter>> getAllReservedScootersOfAnUser();
+        shared_ptr<vector<Scooter>> getAllReservedScootersOfAnUser(string userName);
 
         /// Save scooter instances to repo
         void save();
