@@ -177,3 +177,16 @@ Scooter repository::Repository::getScooterById(string id)
     }
     return {};
 }
+
+shared_ptr<vector<Scooter>> repository::Repository::getAllScootersReservedByAnUser(string userName)
+{
+    auto result = std::make_shared<std::vector<Scooter>>();
+    for (const Scooter& scooter : Scooters)
+    {
+        if (scooter.getUser() == userName)
+        {
+            result->push_back(scooter);
+        }
+    }
+    return result;
+}

@@ -160,7 +160,7 @@ vector<Scooter> controller::Controller::filterScootersByDate(const string& manuf
     return filteredScooters;
 }
 
-vector<Scooter> controller::Controller::sortScootersByAge() {
+vector<Scooter> controller::Controller::sortScootersByDate() {
     struct manufacturingDate {
         int day, month, year;
     };
