@@ -157,7 +157,7 @@ void testSortScootersByAge() {
 
     Controller controller(repository);
 
-    auto filteredScooters = controller.sortScootersByAge();
+    auto filteredScooters = controller.sortScootersByDate();
     assert(filteredScooters[0].getIdentifier() == "DEF");
     assert(filteredScooters[1].getIdentifier() == "GHI");
     assert(filteredScooters[2].getIdentifier() == "ABC");

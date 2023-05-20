@@ -177,7 +177,7 @@ void managerUi::ManagerUI::displayScootersFilteredByAge()
 
 void managerUi::ManagerUI::displayAllScootersSortedByAge()
 {
-    vector<Scooter> scooters = controller->sortScootersByAge();
+    vector<Scooter> scooters = controller->sortScootersByDate();
     printScooterContainer(scooters);
 }
 

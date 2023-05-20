@@ -70,28 +70,39 @@ namespace controller
         /// \param status scooter's status
         bool modifyScooterFromRepo(const string& ID, double km = -1, const string& location = "", ScooterStatus status=UNKNOWN);
 
+        // Use shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) = 0;
         /// Filter scooters by location
         /// \param location string after which to search scooter
         /// \return vector of scooters that contain the given location string
-        vector<Scooter> filterScootersByLocation(string location);
+        shared_ptr<vector<Scooter>> filterScootersByLocation(string location);
 
+        // Use shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax)
         /// Filter scooters that have less Km than a specified value
         /// \param km maximum value to filter
         /// \return vector of instances that have fewer km than the given value
-        vector<Scooter> filterScootersByKm(double km);
+        shared_ptr<vector<Scooter>> filterScootersByKm(double km);
 
+        // Use shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax)
         /// Filter scooters that have been manufactured after the given date
         /// \param manufacturingDate manufacturing date to filter
         /// \return vector of instances that have been manufactured after the given date
-        vector<Scooter> filterScootersByDate(const string& manufacturingDate);
+        shared_ptr<vector<Scooter>> filterScootersByDate(const string& manufacturingDate);
 
+        // Use shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax)
         /// Sort scooters by age
         /// \return vector of instances that have been sorted by their age
-        vector<Scooter> sortScootersByAge();
+        shared_ptr<vector<Scooter>> sortScootersByDate();
 
+        // Use shared_ptr<vector<Scooter>> getAllScootersFromRepo()
         /// Sort scooters by ID
         /// \return vector of instances that have been sorted by their ID
-        vector<Scooter> sortScootersByID();
+        shared_ptr<vector<Scooter>> sortScootersByID();
+
+        // Use shared_ptr<vector<Scooter>> getAllParkedScooters()
+        shared_ptr<vector<Scooter>> filterParkedScooters();
+
+        // Use shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser
+        shared_ptr<vector<Scooter>> getAllReservedScootersOfAnUser();
 
         /// Save scooter instances to repo
         void save();

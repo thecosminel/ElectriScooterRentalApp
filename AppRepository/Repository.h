@@ -45,6 +45,7 @@ namespace repository
         virtual shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) = 0;
         virtual shared_ptr<vector<Scooter>> getAllParkedScooters() = 0;
         virtual Scooter getScooterById (string id) = 0;
+        virtual shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName) = 0;
 
         /// get all the electric scooters in the repository
         /// \return
@@ -80,11 +81,11 @@ namespace repository
 
         /// remove an electric scooter from the repository
         /// \param scooter
-        void deleteScooter(const Scooter& scooter);
+        void deleteScooter(const Scooter& scooter) override;
 
         /// update an existing electric oldScooter in the repository
         /// \param oldScooter
-        void updateScooterInfo(const Scooter& oldScooter, const Scooter& updatedScooter);
+        void updateScooterInfo(const Scooter& oldScooter, const Scooter& updatedScooter) override;
 
         /// get all the electric scooters in the repository
         /// \return
@@ -96,6 +97,7 @@ namespace repository
         shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) override;
         shared_ptr<vector<Scooter>> getAllParkedScooters() override;
         Scooter getScooterById (string id) override;
+        shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName) override;
 
         /// method for saving to file
         /// \param fileName
