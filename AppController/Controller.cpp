@@ -4,32 +4,26 @@
 
 #include "Controller.h"
 #include "Scooter.h"
-#include "Utils/AuxiliaryFunctions.h"
 #include <stdexcept>
 #include <utility>
 using std::vector;
 
-controller::Controller::Controller(shared_ptr<Repository> repository)
-{
+controller::Controller::Controller(shared_ptr<Repository> repository) {
     this->repository = std::move(repository);
 }
 
 controller::Controller::~Controller() = default;
 
 string controller::Controller::generateID() {
-    string s1, s2, s3;
-    s1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    s2 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    s3 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    string ID = "???";
+    string ID, s1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int len = static_cast<int>(s1.length());
 
     for(int i = 0; i < len; i++) {
         for(int j = 0; j < len; j++) {
             for(int k = 0; k < len; k++) {
                 ID[0] = s1[i];
-                ID[1] = s2[j];
-                ID[2] = s3[k];
+                ID[1] = s1[j];
+                ID[2] = s1[k];
                 if(checkIDAvailability(ID)) {
                     return ID;
                 }
@@ -40,9 +34,9 @@ string controller::Controller::generateID() {
 }
 
 bool controller::Controller::checkIDAvailability(const string& ID) {
-    vector<Scooter> allScooters = repository->getAllScootersFromRepo();
-    for(int i = 0; i < allScooters.size(); i++) { //NOLINT
-        if(allScooters[i].getIdentifier() == ID) {
+    auto allScooters = repository->getAllScootersFromRepo();
+    for(const Scooter& currentScooter : *allScooters) { //NOLINT
+        if(currentScooter.getIdentifier() == ID) {
             return false;
         }
     }
@@ -50,10 +44,10 @@ bool controller::Controller::checkIDAvailability(const string& ID) {
 }
 
 Scooter controller::Controller::findScooterById(const string& ID) {
-    vector<Scooter> allScooters = repository->getAllScootersFromRepo();
-    for(int i = 0; i < allScooters.size(); i++) { //NOLINT
-        if(allScooters[i].getIdentifier() == ID) {
-            return allScooters[i];
+    auto allScooters = repository->getAllScootersFromRepo();
+    for(const Scooter& currentScooter : *allScooters) { //NOLINT
+        if(currentScooter.getIdentifier() == ID) {
+            return currentScooter;
         }
     }
     throw std::invalid_argument("Given scooter ID is not in repo");
@@ -74,21 +68,16 @@ bool controller::Controller::reserveScooter(const string& ID) {
 }
 
 void controller::Controller::addScooterToRepo(string model, std::string manufacturingDate, double km, string location, ScooterStatus status) {
-    try{
-        string ID = generateID();
-        Scooter newScooter(ID, std::move(model), std::move(manufacturingDate), km, std::move(location), status);
-        repository->addScooter(newScooter);
-    }
-    catch (...) {
-        return;
-    }
+    string ID = generateID();
+    Scooter newScooter(ID, std::move(model), std::move(manufacturingDate), km, std::move(location), status);
+    repository->addScooter(newScooter);
 }
 
 bool controller::Controller::deleteScooterFromRepo(const string& ID) {
-    vector<Scooter> allScooters = repository->getAllScootersFromRepo();
-    for(int i = 0; i < allScooters.size(); i++) { //NOLINT
-        if(allScooters[i].getIdentifier() == ID) {
-            repository->deleteScooter(allScooters[i]);
+    auto allScooters = repository->getAllScootersFromRepo();
+    for(const Scooter& currentScooter : *allScooters) { //NOLINT
+        if(currentScooter.getIdentifier() == ID) {
+            repository->deleteScooter(currentScooter);
             return true;
         }
     }
@@ -96,71 +85,38 @@ bool controller::Controller::deleteScooterFromRepo(const string& ID) {
 }
 
 bool controller::Controller::modifyScooterFromRepo(const string& ID, double km, const string& location, ScooterStatus status) {
-    try {
-        Scooter oldScooter = findScooterById(ID);
-        Scooter updatedScooter = oldScooter;
-        if(km != -1) {
-            updatedScooter.setKilometers(km);
-        }
-        if(!location.empty()) {
-            updatedScooter.setLocation(location);
-        }
-        if(status != UNKNOWN) {
-            updatedScooter.setStatus(status);
-        }
+    Scooter oldScooter = findScooterById(ID);
+    Scooter updatedScooter = oldScooter;
 
-        repository->updateScooterInfo(oldScooter, updatedScooter);
-        return true;
+    if(km != -1) {
+        updatedScooter.setKilometers(km);
     }
-    catch (...) {
-        return false;
+
+    if(!location.empty()) {
+        updatedScooter.setLocation(location);
     }
+
+    if(status != UNKNOWN) {
+        updatedScooter.setStatus(status);
+    }
+
+    repository->updateScooterInfo(oldScooter, updatedScooter);
+    return true;
 }
 
-vector<Scooter> controller::Controller::filterScootersByLocation(string location) {
-    for (auto &c : location)
-        c = static_cast<char>(tolower(c));
-    vector<Scooter> allScooters = repository->getAllScootersFromRepo();
-    vector<Scooter> filteredScooters;
-    for(int i = 0; i < allScooters.size(); i++) { //NOLINT
-        string currentLocation = allScooters[i].getLocation();
-        for (auto &c : currentLocation)
-            c = static_cast<char>(tolower(c));
-        if(currentLocation.find(location) != string::npos) {
-            filteredScooters.push_back(allScooters[i]);
-        }
-    }
-    return filteredScooters;
+shared_ptr<vector<Scooter>> controller::Controller::filterScootersByLocation(string location) {
+    return repository->getAllScootersByLocation(std::move(location));
 }
 
-vector<Scooter> controller::Controller::filterScootersByKm(double km) {
-    vector<Scooter> allScooters = repository->getAllScootersFromRepo();
-    vector<Scooter> filteredScooters;
-
-    for(int i = 0; i < allScooters.size(); i++) { // NOLINT
-        if(allScooters[i].getKilometers() < km) {
-            filteredScooters.push_back(allScooters[i]);
-        }
-    }
-
-    return filteredScooters;
+shared_ptr<vector<Scooter>> controller::Controller::filterScootersByKmBetweenTwoValues(double kmMin, double kmMax) {
+    return repository->getAllScootersByKmBetweenTwoValues(kmMin, kmMax);
 }
 
-vector<Scooter> controller::Controller::filterScootersByDate(const string& manufacturingDate) {
-    vector<Scooter> allScooters = repository->getAllScootersFromRepo();
-    vector<Scooter> filteredScooters;
-
-    for(int i = 0; i < allScooters.size(); i++) { // NOLINT
-        string scooterManufacturingDate = allScooters[i].getDate();
-        if(compareManufacturingDates(manufacturingDate, scooterManufacturingDate)) {
-            filteredScooters.push_back(allScooters[i]);
-        }
-    }
-
-    return filteredScooters;
+shared_ptr<vector<Scooter>> controller::Controller::filterScootersByAgeBetweenTwoDates(string dateMin, string dateMax) {
+    return repository->getAllScootersByAgeBetweenTwoDates(std::move(dateMin), std::move(dateMax));
 }
 
-vector<Scooter> controller::Controller::sortScootersByDate() {
+shared_ptr<vector<Scooter>> controller::Controller::sortScootersByDate() {
     struct manufacturingDate {
         int day, month, year;
     };
@@ -169,7 +125,12 @@ vector<Scooter> controller::Controller::sortScootersByDate() {
         string S_day, S_month, S_year;
     };
 
-    vector<Scooter> scooters = repository->getAllScootersFromRepo();
+    shared_ptr<vector<Scooter>> allScooters = repository->getAllScootersFromRepo();
+    vector<Scooter> scooters;
+    for(const Scooter& currentScooter : *allScooters) {
+        scooters.push_back(currentScooter);
+    }
+
     vector<manufacturingDate> manufacturingDates(scooters.size());
 
     for(int i = 0; i < scooters.size(); i++) {
@@ -222,11 +183,20 @@ vector<Scooter> controller::Controller::sortScootersByDate() {
             }
         }
     }
-    return scooters;
+    auto result = std::make_shared<vector<Scooter>>();
+    for(const Scooter& scooter : scooters) {
+        result->push_back(scooter);
+    }
+    return result;
 }
 
-vector<Scooter> controller::Controller::sortScootersByID() {
-    vector<Scooter> scooters = repository->getAllScootersFromRepo();
+shared_ptr<vector<Scooter>> controller::Controller::sortScootersByID() {
+    auto allScooters = repository->getAllScootersFromRepo();
+
+    vector<Scooter> scooters;
+    for(const Scooter& scooter : *allScooters) {
+        scooters.push_back(scooter);
+    }
 
     for(int i = 0; i < scooters.size() - 1; i++) {
         for(int j = i + 1; j < scooters.size(); j++) {
@@ -240,7 +210,20 @@ vector<Scooter> controller::Controller::sortScootersByID() {
             }
         }
     }
-    return scooters;
+    auto result = std::make_shared<vector<Scooter>>();
+    for(const Scooter& scooter : scooters) {
+        result->push_back(scooter);
+    }
+
+    return result;
+}
+
+shared_ptr<vector<Scooter>> controller::Controller::filterParkedScooters() {
+    return repository->getAllParkedScooters();
+}
+
+shared_ptr<vector<Scooter>> controller::Controller::getAllReservedScootersOfAnUser(string userName) {
+    return repository->getAllScootersReservedByAnUser(std::move(userName));
 }
 
 void controller::Controller::save() {
