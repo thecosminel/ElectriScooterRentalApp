@@ -1,0 +1,3 @@
+W:/Facultate/OOP/ScooterApp/cmake-build-debug/CMakeFiles/ElectricScooterRentalApp.dir
+W:/Facultate/OOP/ScooterApp/cmake-build-debug/CMakeFiles/edit_cache.dir
+W:/Facultate/OOP/ScooterApp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,4 @@
+"D:\Programs\CLion 2023.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S W:\Facultate\OOP\ScooterApp -B W:\Facultate\OOP\ScooterApp\cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: W:/Facultate/OOP/ScooterApp/cmake-build-debug

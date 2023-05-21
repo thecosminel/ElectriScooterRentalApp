@@ -1,0 +1,24 @@
+# ninja log v5
+46	3269	7058635690635279	CMakeFiles/Lab5_oop_somewhat_complete.dir/Domain/Scooter.cpp.obj	d73e30c041ccb66c
+4	1757	7058636168571744	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppUI/ClientUI.cpp.obj	fae9f13142d97c56
+20	1995	7058636170963110	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppController/Controller.cpp.obj	990f20f7cfebd56e
+13	1638	7058636167378451	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppUI/MainUI.cpp.obj	1861e05574a880f3
+2046	2438	7058636175351422	Lab5_oop_somewhat_complete.exe	be56dc40e92620c
+128	3161	7058635689278441	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppRepository/RepositoryTest.cpp.obj	46ddef7dd21be894
+2	759	7058636935420164	build.ninja	23e33abf7a82e1bd
+117	3700	7058635694685136	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppRepository/Repository.cpp.obj	ee39c2d60525f18
+27	1867	7058636169676887	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppUI/ManagerUI.cpp.obj	9f1513de88f4d21b
+44	1713	7058636168109365	CMakeFiles/Lab5_oop_somewhat_complete.dir/Utils/AuxiliaryFunctions.cpp.obj	5ee4dafd1eab970d
+34	2046	7058636171483738	CMakeFiles/Lab5_oop_somewhat_complete.dir/App.cpp.obj	9ac8bebe77127f58
+189	4012	7058635698133064	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppController/ControllerTest.cpp.obj	6e2559bf7d6b1e59
+24	1664	7058637057995898	CMakeFiles/Lab5_oop_somewhat_complete.dir/Domain/Scooter.cpp.obj	5cef7daa64c25e10
+16	1985	7058637061201503	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppUI/MainUI.cpp.obj	8aba0d5d73f5c26f
+5	2080	7058637062248896	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppUI/ClientUI.cpp.obj	b1f35c1666bee8a0
+101	2223	7058637063620336	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppRepository/RepositoryTest.cpp.obj	d91692d936324d43
+68	2297	7058637064430694	CMakeFiles/Lab5_oop_somewhat_complete.dir/Utils/AuxiliaryFunctions.cpp.obj	267a1eb262a3cfbf
+41	2337	7058637064815870	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppUI/ManagerUI.cpp.obj	2e6f1bffc5abab9a
+32	2505	7058637066541344	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppController/Controller.cpp.obj	cf7aaeca274861d9
+92	2573	7058637067199064	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppController/ControllerTest.cpp.obj	463358d64b7e8863
+56	2614	7058637067642140	CMakeFiles/Lab5_oop_somewhat_complete.dir/App.cpp.obj	e6b631064c890a80
+85	2689	7058637068397922	CMakeFiles/Lab5_oop_somewhat_complete.dir/AppRepository/Repository.cpp.obj	d7e64480e6240a47
+2689	3271	7058637074193349	Lab5_oop_somewhat_complete.exe	be56dc40e92620c
