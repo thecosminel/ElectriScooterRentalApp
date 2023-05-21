@@ -1,7 +1,0 @@
-6
-ABC UpdatedModel 02/02/2023 200 UpdatedLocation 1
-BCD model2 02/02/2023 40 sibiu 1
-ABC model1 01/01/2023 100 Location1 0
-ABC model1 01/01/2023 30 sibiu 0
-BCD model2 02/02/2023 40 sibiu 1
-DEF model3 03/03/2023 50 sibiu 2
