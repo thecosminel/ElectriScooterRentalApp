@@ -228,9 +228,9 @@ shared_ptr<vector<Scooter>> controller::Controller::getAllReservedScootersOfAnUs
 }
 
 void controller::Controller::save() {
-    repository->saveToFile("data.txt");
+    repository->saveToFile("data.csv");
 }
 
 void controller::Controller::load() {
-    repository->loadFromFile("data.txt");
+    repository->loadFromFile("data.csv");
 }

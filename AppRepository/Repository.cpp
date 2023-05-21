@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 #include <memory>
+#include <sstream>
+
 //modificare
 void repository::Repository::addScooter(const Scooter &scooter)
 {
@@ -60,15 +62,14 @@ void repository::Repository::saveToFile(const std::string& fileName)
     std::ofstream file(fileName);
     if (file.is_open())
     {
-        file << Scooters.size() << endl;
-        for (const auto& scooter : Scooters)
-        {
-            file << scooter.getIdentifier() << ' ';
-            file << scooter.getModel() << ' ';
-            file << scooter.getDate() << ' ';
-            file << scooter.getKilometers() << ' ';
-            file << scooter.getLocation() << ' ';
-            file << static_cast<int>(scooter.getStatus()) << endl;
+        file << Scooters.size() << std::endl;
+        for (const auto& scooter : Scooters) {
+            file << scooter.getIdentifier() << ',';
+            file << scooter.getModel() << ',';
+            file << scooter.getDate() << ',';
+            file << scooter.getKilometers() << ',';
+            file << scooter.getLocation() << ',';
+            file << static_cast<int>(scooter.getStatus()) << std::endl;
         }
         file.close();
     }
@@ -81,25 +82,31 @@ void repository::Repository::saveToFile(const std::string& fileName)
 void repository::Repository::loadFromFile(const std::string& fileName)
 {
     ifstream file(fileName);
+    std::string line;
+    std::getline(file, line);
     if (file.is_open())
     {
-        Scooters.clear(); //clear the existing scooters before loading from file
-        int size;
-        file >> size;
-        for (int i = 0; i < size; ++i)
-        {
-            string identifier;
-            string model;
-            string date;
+
+        while (std::getline(file, line)) {
+            std::stringstream ss(line);
+            std::string element;
+
+            std::string identifier;
+            std::string model;
+            std::string date;
             double kilometers;
-            string location;
+            std::string location;
             int status;
-            file >> identifier;
-            file >> model;
-            file >> date;
-            file >> kilometers;
-            file >> location;
-            file >> status;
+
+            // Read each element separated by commas
+            std::getline(ss, identifier, ',');
+            std::getline(ss, model, ',');
+            std::getline(ss, date, ',');
+            ss >> kilometers;
+            ss.ignore(); // Ignore the comma after 'kilometers'
+            std::getline(ss, location, ',');
+            ss >> status;
+
             auto scooterStatus = static_cast<ScooterStatus>(status);
             Scooter scooter(identifier, model, date, kilometers, location, scooterStatus);
             Scooters.push_back(scooter);

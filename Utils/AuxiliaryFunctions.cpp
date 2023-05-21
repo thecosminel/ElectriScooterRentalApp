@@ -193,7 +193,7 @@ pair<double, double> enterKmMultiple()
     cout << "Enter km min: ";
     cin >> kmMin;
     cout << endl;
-    cout << "Enter km min: ";
+    cout << "Enter km max: ";
     cin >> kmMax;
     pair<double, double> km;
     km.first = kmMin;
