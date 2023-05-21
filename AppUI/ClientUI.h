@@ -2,7 +2,7 @@
 #include "AppController/Controller.h"
 #include <memory>
 #include "Utils/AuxiliaryFunctions.h"
-using std::shared_ptr;
+using std::shared_ptr, std::pair;
 
 using namespace controller;
 

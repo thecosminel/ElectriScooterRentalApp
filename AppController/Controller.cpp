@@ -112,7 +112,8 @@ shared_ptr<vector<Scooter>> controller::Controller::filterScootersByKmBetweenTwo
     return repository->getAllScootersByKmBetweenTwoValues(kmMin, kmMax);
 }
 
-shared_ptr<vector<Scooter>> controller::Controller::filterScootersByAgeBetweenTwoDates(string dateMin, string dateMax) {
+shared_ptr<vector<Scooter>> controller::Controller::filterScootersByAgeBetweenTwoDates(string dateMin, string dateMax)
+{
     return repository->getAllScootersByAgeBetweenTwoDates(std::move(dateMin), std::move(dateMax));
 }
 

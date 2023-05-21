@@ -83,21 +83,22 @@ void clientUi::ClientUI::logIn()
 void clientUi::ClientUI::searchScooterByLocation()
 {
     string location = enterLocation();
-    vector<Scooter> scooters = controller->filterScootersByLocation(location);
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByLocation(location);
     printScooterContainer(scooters);
 }
 
 void clientUi::ClientUI::displayScootersFilteredByKM()
 {
-    double km = enterKm();
-    vector<Scooter> scooters = controller->filterScootersByKm(km);
+    pair<double, double> km = enterKmMultiple();
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByKmBetweenTwoValues(km.first, km.second);
     printScooterContainer(scooters);
 }
 
 void clientUi::ClientUI::displayScootersFilteredByAge()
 {
-    string manufacturingDate = enterManufacturingDate();
-    vector<Scooter> scooters = controller->filterScootersByDate(manufacturingDate);
+    pair <string, string> dates;
+    dates = enterManufacturingDates();
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByAgeBetweenTwoDates(dates.first, dates.second);
     printScooterContainer(scooters);
 }
 

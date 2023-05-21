@@ -28,13 +28,13 @@ void pressEnterToContinue()
 #endif
 }
 
-void printScooterContainer(std::vector<Scooter> scooterContainer)
+void printScooterContainer(const shared_ptr<vector<Scooter>>& scooterContainer)
 {
     cout << endl;
-
-    for (int i = 0; i < scooterContainer.size(); i++)
+    vector<Scooter>& scooterVector = *scooterContainer;
+    for (int i = 0; i < scooterVector.size(); i++)
     {
-        Scooter scooter = scooterContainer[i];
+        Scooter scooter = scooterVector[i];
         printIndexing(i+1);
         cout << "ID: " << scooter.getIdentifier() << "  ";
         cout << "Model: " << scooter.getModel();
@@ -146,9 +146,35 @@ string enterModel()
     return model;
 }
 
+pair <string, string> enterManufacturingDates()
+{
+    pair <string, string> dates;
+    string manufacturingDateMin;
+    cout << endl;
+    cout << "Enter minimum manufacturing date: ";
+    cin >> manufacturingDateMin;
+    while (!checkDateFormat(manufacturingDateMin))
+    {
+        cout << endl << "Please enter a valid manufacturing date:";
+        cin >> manufacturingDateMin;
+    }
+    dates.first = manufacturingDateMin;
+    string manufacturingDateMax;
+    cout << endl;
+    cout << "Enter maximum manufacturing date: ";
+    cin >> manufacturingDateMax;
+    while (!checkDateFormat(manufacturingDateMax))
+    {
+        cout << endl << "Please enter a valid manufacturing date:";
+        cin >> manufacturingDateMax;
+    }
+    dates.second = manufacturingDateMax;
+    return dates;
+}
+
 string enterManufacturingDate()
 {
-    string manufacturingDate;
+    string  manufacturingDate;
     cout << endl;
     cout << "Enter manufacturing date: ";
     cin >> manufacturingDate;
@@ -158,6 +184,21 @@ string enterManufacturingDate()
         cin >> manufacturingDate;
     }
     return manufacturingDate;
+}
+
+pair<double, double> enterKmMultiple()
+{
+    double kmMin, kmMax;
+    cout << endl;
+    cout << "Enter km min: ";
+    cin >> kmMin;
+    cout << endl;
+    cout << "Enter km min: ";
+    cin >> kmMax;
+    pair<double, double> km;
+    km.first = kmMin;
+    km.second = kmMax;
+    return km;
 }
 
 double enterKm()

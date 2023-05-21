@@ -7,15 +7,18 @@
 #include <vector>
 #include <iostream>
 #include <cctype>
+#include <memory>
 
 using namespace scooter;
-using std::vector, std::string, std::isalnum;
+using std::vector, std::string, std::isalnum, std::shared_ptr, std::pair;
 
 // AppUI
 string enterUserName();
 string enterID();
 string enterModel();
+pair <string, string> enterManufacturingDates();
 string enterManufacturingDate();
+pair<double, double> enterKmMultiple();
 double enterKm();
 string enterLocation();
 ScooterStatus enterStatus();
@@ -31,7 +34,7 @@ void pressEnterToContinue();
 void printIndexing(int index);
 void insertBlankSpaces(const string& text);
 void printDoubleNumber(double number);
-void printScooterContainer(std::vector<Scooter> scooterContainer);
+void printScooterContainer(const shared_ptr<vector<Scooter>>& scooterContainer);
 
 
 // Repo

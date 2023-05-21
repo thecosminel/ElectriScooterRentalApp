@@ -157,33 +157,34 @@ bool managerUi::ManagerUI::modifyExistingScooter()
 void managerUi::ManagerUI::searchScooterByLocation()
 {
     string location = enterLocation();
-    vector<Scooter> scooters = controller->filterScootersByLocation(location);
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByLocation(location);
     printScooterContainer(scooters);
 }
 
 void managerUi::ManagerUI::displayScootersFilteredByKm()
 {
-    double km = enterKm();
-    vector<Scooter> scooters = controller->filterScootersByKm(km);
+    pair<double, double> km = enterKmMultiple();
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByKmBetweenTwoValues(km.first, km.second);
     printScooterContainer(scooters);
 }
 
 void managerUi::ManagerUI::displayScootersFilteredByAge()
 {
-    string manufacturingDate = enterManufacturingDate();
-    vector<Scooter> scooters = controller->filterScootersByDate(manufacturingDate);
+    pair <string, string> dates;
+    dates = enterManufacturingDates();
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByAgeBetweenTwoDates(dates.first, dates.second);
     printScooterContainer(scooters);
 }
 
 void managerUi::ManagerUI::displayAllScootersSortedByAge()
 {
-    vector<Scooter> scooters = controller->sortScootersByDate();
+    shared_ptr<vector<Scooter>> scooters = controller->sortScootersByDate();
     printScooterContainer(scooters);
 }
 
 void managerUi::ManagerUI::displayAllScootersSortedByID()
 {
-    vector<Scooter> scooters =controller->sortScootersByID();
+    shared_ptr<vector<Scooter>> scooters =controller->sortScootersByID();
     printScooterContainer(scooters);
 }
 

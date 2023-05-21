@@ -14,8 +14,8 @@ int main() {
     auto managerUI = make_shared<ManagerUI>(ctrl);
     auto clientUI = make_shared<ClientUI>(ctrl);
     auto mainUI = make_shared<MainUI>(managerUI, clientUI);
-    testAllController();
-    testAllRepo();
+//    testAllController();
+//    testAllRepo();
     mainUI->runMain();
     return 0;
 }
