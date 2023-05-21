@@ -68,40 +68,40 @@ namespace controller
         /// \param km scooter's km
         /// \param location scooter's last location
         /// \param status scooter's status
-        bool modifyScooterFromRepo(const string& ID, double km = -1, const string& location = "", ScooterStatus status=UNKNOWN);
+        bool modifyScooterFromRepo(const string& ID, double km = -1, const string& location = "", ScooterStatus status = UNKNOWN);
 
-        // Use shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) = 0;
         /// Filter scooters by location
         /// \param location string after which to search scooter
-        /// \return vector of scooters that contain the given location string
+        /// \return shared pointer to a vector of scooters that contain the given location string
         shared_ptr<vector<Scooter>> filterScootersByLocation(string location);
 
-        // Use shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax)
-        /// Filter scooters that have less Km than a specified value
-        /// \param km maximum value to filter
-        /// \return vector of instances that have fewer km than the given value
-        shared_ptr<vector<Scooter>> filterScootersByKm(double km);
+        /// Filter scooters that have Km in between two specified values
+        /// \param kmMin minimum value to filter
+        /// \param kmMax maximum value to filter
+        /// \return shared pointer to a vector of scooters that have a km value in between the given values
+        shared_ptr<vector<Scooter>> filterScootersByKmBetweenTwoValues(double kmMin, double kmMax);
 
-        // Use shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax)
-        /// Filter scooters that have been manufactured after the given date
-        /// \param manufacturingDate manufacturing date to filter
-        /// \return vector of instances that have been manufactured after the given date
-        shared_ptr<vector<Scooter>> filterScootersByDate(const string& manufacturingDate);
+        /// Filter scooters that have been manufactured in between the given dates
+        /// \param dateMin minimum date to filter
+        /// \param dateMax maximum date to filter
+        /// \return shared pointer to a vector of scooters that have been manufactured in between the given dates
+        shared_ptr<vector<Scooter>> filterScootersByAgeBetweenTwoDates(string dateMin, string dateMax);
 
-        // Use shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax)
         /// Sort scooters by age
-        /// \return vector of instances that have been sorted by their age
+        /// \return shared pointer to a vector of scooters that have been sorted by their age
         shared_ptr<vector<Scooter>> sortScootersByDate();
 
-        // Use shared_ptr<vector<Scooter>> getAllScootersFromRepo()
         /// Sort scooters by ID
-        /// \return vector of instances that have been sorted by their ID
+        /// \return shared pointer to a vector of scooters that have been sorted by their ID
         shared_ptr<vector<Scooter>> sortScootersByID();
 
-        // Use shared_ptr<vector<Scooter>> getAllParkedScooters()
+        /// Filter parked scooters
+        /// \return shared pointer to a vector of scooters that are currently parked
         shared_ptr<vector<Scooter>> filterParkedScooters();
 
-        // Use shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser
+        /// Get all reserved scooters of a user
+        /// \param userName person's user name
+        /// \return shared pointer to a vector of scooters that have been reserved by the respective user
         shared_ptr<vector<Scooter>> getAllReservedScootersOfAnUser(string userName);
 
         /// Save scooter instances to repo
