@@ -1,9 +1,9 @@
 #include "RepositoryTest.h"
-#include "Repository.h"
+#include "InMemoryRepository.h"
 #include <iostream>
 #include <cassert>
 
-void testAddScooter(repository::Repository& repository)
+void testAddScooter(repository::InMemoryRepository& repository)
 {
     //create a Scooter object
     Scooter scooter1("ABC", "model1", "01/01/2023", 30.0, "sibiu", ScooterStatus::PARKED);
@@ -16,7 +16,7 @@ void testAddScooter(repository::Repository& repository)
     std::cout << "Add method working properly, bravo!" << std::endl;
 }
 
-void testDeleteScooter(repository::Repository& repository)
+void testDeleteScooter(repository::InMemoryRepository& repository)
 {
     //create Scooter objects
     Scooter scooter1("ABC", "model1", "01/01/2023", 30.0, "sibiu", ScooterStatus::PARKED);
@@ -34,7 +34,7 @@ void testDeleteScooter(repository::Repository& repository)
     std::cout << "Delete method working properly, bravo!" << std::endl;
 }
 
-void testUpdateScooter(repository::Repository& repository) {
+void testUpdateScooter(repository::InMemoryRepository& repository) {
     //create a Scooter object
     Scooter scooter("ABC", "model1", "01/01/2023", 100.0, "Location1", ScooterStatus::PARKED);
 
@@ -61,7 +61,7 @@ void testUpdateScooter(repository::Repository& repository) {
     std::cout << "Update method working properly, bravo!" << std::endl;
 }
 
-void testSaveToFile(repository::Repository& repository, const std::string& fileName)
+void testSaveToFile(repository::InMemoryRepository& repository, const std::string& fileName)
 {
     //create some scooters
     Scooter scooter1("ABC", "model1", "01/01/2023", 30.0, "sibiu", ScooterStatus::PARKED);
@@ -77,7 +77,7 @@ void testSaveToFile(repository::Repository& repository, const std::string& fileN
     repository.saveToFile(fileName);
 
     //create a new repository
-    repository::Repository newRepository;
+    repository::InMemoryRepository newRepository;
 
     //load the repository from the file
     newRepository.loadFromFile(fileName);
@@ -110,7 +110,7 @@ void testSaveToFile(repository::Repository& repository, const std::string& fileN
 }
 void testAllRepo()
 {
-    repository::Repository repository;
+    repository::InMemoryRepository repository;
     testAddScooter(repository);
     testDeleteScooter(repository);
     testUpdateScooter(repository);

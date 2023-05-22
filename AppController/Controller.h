@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "../AppRepository/Repository.h"
+#include "../AppRepository/InMemoryRepository.h"
 #include "Scooter.h"
 using namespace repository;
 using namespace scooter;
@@ -14,7 +14,7 @@ namespace controller
 {
     class Controller {
     private:
-        shared_ptr<Repository> repository;
+        shared_ptr<InMemoryRepository> repository;
 
         /// Generates an ID for the scooter
         /// \return an original ID for the scooter
@@ -33,7 +33,7 @@ namespace controller
     public:
 
         ///Constructor
-        explicit Controller(shared_ptr<Repository> repository);
+        explicit Controller(shared_ptr<InMemoryRepository> repository);
 
         ///Copy-constructor
         Controller(Controller& controller) = default;
