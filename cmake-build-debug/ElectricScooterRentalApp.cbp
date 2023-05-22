@@ -8,148 +8,157 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug"/>
+				<Option working_dir="W:/Facultate/OOP/ScooterApp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ElectricScooterRentalApp">
-				<Option output="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/ElectricScooterRentalApp.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug"/>
+				<Option output="W:/Facultate/OOP/ScooterApp/cmake-build-debug/ElectricScooterRentalApp.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="W:/Facultate/OOP/ScooterApp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/."/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI"/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppController"/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain"/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppRepository"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/."/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/AppUI"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/AppController"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/Domain"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/AppRepository"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 ElectricScooterRentalApp"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 ElectricScooterRentalApp"/>
+					<CompileFile command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ElectricScooterRentalApp/fast">
-				<Option output="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/ElectricScooterRentalApp.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug"/>
+				<Option output="W:/Facultate/OOP/ScooterApp/cmake-build-debug/ElectricScooterRentalApp.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="W:/Facultate/OOP/ScooterApp/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/."/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI"/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppController"/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain"/>
-					<Add directory="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppRepository"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/."/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/AppUI"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/AppController"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/Domain"/>
+					<Add directory="W:/Facultate/OOP/ScooterApp/AppRepository"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/Programs/CLion 2023.1.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 ElectricScooterRentalApp/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 ElectricScooterRentalApp/fast"/>
+					<CompileFile command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug"/>
+				<Option working_dir="W:/Facultate/OOP/ScooterApp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug"/>
+				<Option working_dir="W:/Facultate/OOP/ScooterApp/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programs/CLion 2023.1.2/bin/mingw/bin/mingw32-make.exe -f &quot;W:/Facultate/OOP/ScooterApp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/App.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/App.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppController/Controller.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppController/Controller.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppController/Controller.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppController/Controller.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppController/ControllerTest.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppController/ControllerTest.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppController/ControllerTest.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppController/ControllerTest.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppRepository/Repository.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/CrudRepository.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppRepository/Repository.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/CsvFileRepository.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppRepository/RepositoryTest.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/CsvFileRepository.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppRepository/RepositoryTest.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/InMemoryRepository.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI/ClientUI.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/InMemoryRepository.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI/ClientUI.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/RepositoryTest.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI/MainUI.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/RepositoryTest.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI/MainUI.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppUI/ClientUI.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI/ManagerUI.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppUI/ClientUI.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppUI/ManagerUI.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppUI/MainUI.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain/Scooter.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppUI/MainUI.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain/Scooter.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppUI/ManagerUI.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Utils/AuxiliaryFunctions.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppUI/ManagerUI.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Utils/AuxiliaryFunctions.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/Domain/Scooter.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/CMakeLists.txt">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/Domain/Scooter.h">
+			<Option target="ElectricScooterRentalApp"/>
+		</Unit>
+		<Unit filename="W:/Facultate/OOP/ScooterApp/Utils/AuxiliaryFunctions.cpp">
+			<Option target="ElectricScooterRentalApp"/>
+		</Unit>
+		<Unit filename="W:/Facultate/OOP/ScooterApp/Utils/AuxiliaryFunctions.h">
+			<Option target="ElectricScooterRentalApp"/>
+		</Unit>
+		<Unit filename="W:/Facultate/OOP/ScooterApp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

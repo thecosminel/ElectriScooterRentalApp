@@ -1,19 +1,15 @@
-//
-// Created by naomi on 5/13/2023.
-//
-#include "Repository.h"
+#include "CsvFileRepository.h"
 #include <iostream>
 #include <fstream>
 #include <memory>
 #include <sstream>
 
-//modificare
-void repository::Repository::addScooter(const Scooter &scooter)
+void repository::CsvFileRepository::addScooter(const Scooter &scooter)
 {
     Scooters.push_back(scooter);
 }
 
-void repository::Repository::deleteScooter(const Scooter &scooter)
+void repository::CsvFileRepository::deleteScooter(const Scooter &scooter)
 {
     //iterator to find 'scooter' object in the 'electricScooters' vector
     auto it = Scooters.begin();
@@ -28,7 +24,7 @@ void repository::Repository::deleteScooter(const Scooter &scooter)
     }
 }
 
-void repository::Repository::updateScooterInfo(const Scooter& oldScooter, const Scooter& updatedScooter)
+void repository::CsvFileRepository::updateScooterInfo(const Scooter& oldScooter, const Scooter& updatedScooter)
 {
     //find the oldScooter in the repository based on its identifier
     //iterator to find 'oldScooter' object in the 'electricScooters' vector
@@ -49,8 +45,8 @@ void repository::Repository::updateScooterInfo(const Scooter& oldScooter, const 
     }
 }
 
-//vector<Scooter> repository::Repository::getAllScootersFromRepo() const
-shared_ptr<vector<Scooter>>  repository::Repository::getAllScootersFromRepo() const
+//vector<Scooter> repository::CsvFileRepository::getAllScootersFromRepo() const
+shared_ptr<vector<Scooter>>  repository::CsvFileRepository::getAllScootersFromRepo() const
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const auto& scooter : Scooters)
@@ -58,7 +54,7 @@ shared_ptr<vector<Scooter>>  repository::Repository::getAllScootersFromRepo() co
     return result;
 }
 
-void repository::Repository::saveToFile(const std::string& fileName)
+void repository::CsvFileRepository::saveToFile(const std::string& fileName)
 {
     std::ofstream file(fileName);
     if (file.is_open())
@@ -81,7 +77,7 @@ void repository::Repository::saveToFile(const std::string& fileName)
     }
 }
 
-void repository::Repository::loadFromFile(const std::string& fileName)
+void repository::CsvFileRepository::loadFromFile(const std::string& fileName)
 {
     Scooters.clear();
     ifstream file(fileName);
@@ -125,7 +121,7 @@ void repository::Repository::loadFromFile(const std::string& fileName)
     }
 }
 
-shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByLocation(string location)
+shared_ptr<vector<Scooter>> repository::CsvFileRepository::getAllScootersByLocation(string location)
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
@@ -143,7 +139,7 @@ shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByLocation(str
     return result;
 }
 
-shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByKmBetweenTwoValues(double kmMin, double kmMax)
+shared_ptr<vector<Scooter>> repository::CsvFileRepository::getAllScootersByKmBetweenTwoValues(double kmMin, double kmMax)
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
@@ -157,12 +153,12 @@ shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByKmBetweenTwo
     return result;
 }
 
-shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByAgeBetweenTwoDates(string dateMin, string dateMax)
+shared_ptr<vector<Scooter>> repository::CsvFileRepository::getAllScootersByAgeBetweenTwoDates(string dateMin, string dateMax)
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
     {
-       string date = scooter.getDate();
+        string date = scooter.getDate();
         if (compareManufacturingDates(dateMin, date) && compareManufacturingDates(date, dateMax))
         {
             result->push_back(scooter);
@@ -171,7 +167,7 @@ shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByAgeBetweenTw
     return result;
 }
 
-shared_ptr<vector<Scooter>> repository::Repository::getAllParkedScooters()
+shared_ptr<vector<Scooter>> repository::CsvFileRepository::getAllParkedScooters()
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
@@ -184,7 +180,7 @@ shared_ptr<vector<Scooter>> repository::Repository::getAllParkedScooters()
     return result;
 }
 
-Scooter repository::Repository::getScooterById(string id)
+Scooter repository::CsvFileRepository::getScooterById(string id)
 {
     for (const Scooter& scooter : Scooters)
     {
@@ -196,12 +192,12 @@ Scooter repository::Repository::getScooterById(string id)
     return {};
 }
 
-shared_ptr<vector<Scooter>> repository::Repository::getAllScootersReservedByAnUser(string userName)
+shared_ptr<vector<Scooter>> repository::CsvFileRepository::getAllScootersReservedByAnUser(string userName)
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
     {
-        if (scooter.getUser() == userName)
+        if (scooter.getUser() == userName && scooter.getStatus() == PARKED)
         {
             result->push_back(scooter);
         }

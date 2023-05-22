@@ -22,4 +22,4 @@ add_executable(ElectricScooterRentalApp
         Domain/Scooter.h
         Utils/AuxiliaryFunctions.cpp
         Utils/AuxiliaryFunctions.h
-        App.cpp AppRepository/Repository.cpp AppRepository/RepositoryTest.cpp AppController/ControllerTest.cpp)
+        App.cpp AppRepository/CrudRepository.cpp AppRepository/RepositoryTest.cpp AppController/ControllerTest.cpp AppRepository/CsvFileRepository.h AppRepository/CsvFileRepository.cpp AppRepository/InMemoryRepository.h AppRepository/InMemoryRepository.cpp)
