@@ -47,7 +47,7 @@ namespace controller
         /// Reserve scooter
         /// \param ID scooter ID
         /// \return true if the scooter was successfully reserved, false otherwise
-        bool reserveScooter(const string& ID);
+        bool reserveScooter(const string& ID, const string& username);
 
         /// Adds a scooter to the repository
         /// \param ID scooter's ID

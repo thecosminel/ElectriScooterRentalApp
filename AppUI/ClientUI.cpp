@@ -25,7 +25,7 @@ bool clientUi::ClientUI::run()
         cout << "  4. Print available scooters to reserve" << endl; // Implement
         cout << "  5. Reserve scooter" << endl;
         cout << "  6. Print my reserved scooters" << endl; // Implement
-        cout << "  R. Return to main UI";
+        cout << "  R. Return to main UI" << endl;
         cout << "  X. Close app" << endl;
         cin >> choice;
         cout << endl;
@@ -44,15 +44,17 @@ bool clientUi::ClientUI::run()
                 cout << "Display scooters newer than date: ";
                 displayScootersFilteredByAge();
                 break;
-            case '4': // Add function ----------------------------------------
+            case '4':
                 cout << "Print available scooters to reserve: ";
+                displayScootersThatCanBeReserved();
                 break;
             case '5':
                 cout << "Reserve scooter: ";
                 reserveScooter();
                 break;
-            case '6': // Add function ----------------------------------------
+            case '6':
                 cout << "Print my reserved scooters: ";
+                displayScootersReservedByUser();
                 break;
             case 'R':
             case 'r':
@@ -109,7 +111,7 @@ void clientUi::ClientUI::reserveScooter()
     {
         cout << endl << "Please enter a valid ID: ";
     }
-    if (controller->reserveScooter(ID))
+    if (controller->reserveScooter(ID, userName))
     {
         cout << "Scooter " << ID << " successfully reserved";
     }
@@ -131,5 +133,17 @@ void clientUi::ClientUI::exit()
     cout << "\n\n Closing app.....";
     if (saveActions)
         controller->save();
+}
+
+void clientUi::ClientUI::displayScootersReservedByUser()
+{
+    shared_ptr<vector<Scooter>> scooters = controller->getAllReservedScootersOfAnUser(userName);
+    printScooterContainer(scooters);
+}
+
+void clientUi::ClientUI::displayScootersThatCanBeReserved()
+{
+    shared_ptr<vector<Scooter>> scooters = controller->filterParkedScooters();
+    printScooterContainer(scooters);
 }
 

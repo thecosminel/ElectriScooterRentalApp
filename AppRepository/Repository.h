@@ -6,10 +6,12 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <cstdio>
+#include <cstring>
 #include "Domain/Scooter.h"
 
 using namespace scooter;
-using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl;
+using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl, std::strcmp;
 
 namespace repository
 {

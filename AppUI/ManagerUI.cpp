@@ -25,6 +25,7 @@ bool managerUi::ManagerUI::run()
         cout << "  6. Display scooters newer than date" << endl;
         cout << "  7. Display all scooters sorted ascending by manufacturing date" << endl;
         cout << "  8. Display all scooters sorted ascending by ID" << endl;
+        cout << "  R. Return to main ui" << endl;
         cout << "  X. Close app" << endl;
         cin >> choice;
         cout << endl;
@@ -42,7 +43,7 @@ bool managerUi::ManagerUI::run()
             case '3':
                 cout << "Modify existing scooter: ";
                 if(modifyExistingScooter())
-                    cout << "Modify succesful";
+                    cout << "Modify successful";
                 else
                     cout << "Modify failed";
                 break;
@@ -97,7 +98,7 @@ void managerUi::ManagerUI::deleteExistingScooter()
     string ID = enterID();
     if (controller->deleteScooterFromRepo(ID))
     {
-        cout << endl << "Delete succesful!";
+        cout << endl << "Delete successful!";
     }
     else
     {

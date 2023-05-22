@@ -46,6 +46,11 @@ namespace clientUi
         /// Method for displaying certain scooters filtered by age
         void displayScootersFilteredByAge();
 
+        /// Method for displaying certain scooters reserved by an user
+        void displayScootersReservedByUser();
+
+        void displayScootersThatCanBeReserved();
+
         /// Method for reserving a scooter
         void reserveScooter();
     };

@@ -53,14 +53,17 @@ Scooter controller::Controller::findScooterById(const string& ID) {
     throw std::invalid_argument("Given scooter ID is not in repo");
 }
 
-bool controller::Controller::reserveScooter(const string& ID) {
-    if(checkIDAvailability(ID)) {
+bool controller::Controller::reserveScooter(const string& ID, const string& userName) {
+    if(checkIDAvailability(ID))
+    {
         return false;
     }
     Scooter scooter = findScooterById(ID);
     Scooter oldScooter = scooter;
-    if(scooter.getStatus() == PARKED) {
+    if(scooter.getStatus() == PARKED)
+    {
         scooter.setStatus(RESERVED);
+        scooter.setUser(userName);
         repository->updateScooterInfo(oldScooter, scooter);
         return true;
     }
@@ -70,6 +73,7 @@ bool controller::Controller::reserveScooter(const string& ID) {
 void controller::Controller::addScooterToRepo(string model, std::string manufacturingDate, double km, string location, ScooterStatus status) {
     string ID = generateID();
     Scooter newScooter(ID, std::move(model), std::move(manufacturingDate), km, std::move(location), status);
+    newScooter.setUser("");
     repository->addScooter(newScooter);
 }
 

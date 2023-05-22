@@ -45,6 +45,7 @@ void repository::Repository::updateScooterInfo(const Scooter& oldScooter, const 
         (*it).setKilometers(updatedScooter.getKilometers());
         (*it).setLocation(updatedScooter.getLocation());
         (*it).setStatus(updatedScooter.getStatus());
+        (*it).setUser(updatedScooter.getUser());
     }
 }
 
@@ -69,6 +70,7 @@ void repository::Repository::saveToFile(const std::string& fileName)
             file << scooter.getDate() << ',';
             file << scooter.getKilometers() << ',';
             file << scooter.getLocation() << ',';
+            file << scooter.getUser() << ',';
             file << static_cast<int>(scooter.getStatus()) << std::endl;
         }
         file.close();
@@ -96,6 +98,7 @@ void repository::Repository::loadFromFile(const std::string& fileName)
             std::string date;
             double kilometers;
             std::string location;
+            string userName;
             int status;
 
             // Read each element separated by commas
@@ -105,10 +108,12 @@ void repository::Repository::loadFromFile(const std::string& fileName)
             ss >> kilometers;
             ss.ignore(); // Ignore the comma after 'kilometers'
             std::getline(ss, location, ',');
+            std::getline(ss, userName, ',');
             ss >> status;
 
             auto scooterStatus = static_cast<ScooterStatus>(status);
             Scooter scooter(identifier, model, date, kilometers, location, scooterStatus);
+            scooter.setUser(userName);
             Scooters.push_back(scooter);
         }
         file.close();
@@ -124,7 +129,12 @@ shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByLocation(str
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
     {
-        if (scooter.getLocation() == location)
+        for (auto &c : location)
+            c = tolower(c); //NOLINT
+        string currentLocation = scooter.getLocation();
+        for (auto &c : currentLocation)
+            c = tolower(c); //NOLINT
+        if (currentLocation.find(location) != std::string::npos)
         {
             result->push_back(scooter);
         }
