@@ -13,7 +13,6 @@ bool clientUi::ClientUI::run()
 {
     controller->load();
     cout << "\n\n\nDear Client, welcome to our Electric Scooter Rental App!!" << endl;
-    logIn();
     char choice;
     do
     {
@@ -73,16 +72,6 @@ bool clientUi::ClientUI::run()
     return false;
 }
 
-void clientUi::ClientUI::logIn()
-{
-    // Username
-    string username = enterUserName();
-    this->userName = username;
-    // Chose if actions are to be persistent saved
-    this->saveActions = choseIfSaveActions();
-    cout << endl;
-}
-
 void clientUi::ClientUI::searchScooterByLocation()
 {
     string location = enterLocation();
@@ -129,11 +118,9 @@ clientUi::ClientUI::ClientUI(shared_ptr<Controller> controller)
     this->saveActions = false;
 }
 
-void clientUi::ClientUI::exit()
+void clientUi::ClientUI::exit() //NOLINT
 {
     cout << "\n\n Closing app.....";
-    if (saveActions)
-        controller->save();
 }
 
 void clientUi::ClientUI::displayScootersReservedByUser()

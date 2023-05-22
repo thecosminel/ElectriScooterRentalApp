@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "../AppRepository/Crudrepository.h"
+#include "../AppRepository/CrudRepository.h"
 #include "Scooter.h"
 using namespace repository;
 using namespace scooter;
@@ -14,7 +14,7 @@ namespace controller
 {
     class Controller {
     private:
-        shared_ptr<Repository> repository;
+        shared_ptr<CrudRepository> repository;
 
         /// Generates an ID for the scooter
         /// \return an original ID for the scooter
@@ -33,7 +33,7 @@ namespace controller
     public:
 
         ///Constructor
-        explicit Controller(shared_ptr<Repository> repository);
+        explicit Controller(shared_ptr<CrudRepository> repository);
 
         ///Copy-constructor
         Controller(Controller& controller) = default;
@@ -103,9 +103,6 @@ namespace controller
         /// \param userName person's user name
         /// \return shared pointer to a vector of scooters that have been reserved by the respective user
         shared_ptr<vector<Scooter>> getAllReservedScootersOfAnUser(string userName);
-
-        /// Save scooter instances to repo
-        void save();
 
         /// Load scooter instances to repo
         void load();

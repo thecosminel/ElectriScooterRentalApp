@@ -8,7 +8,7 @@
 #include <utility>
 using std::vector;
 
-controller::Controller::Controller(shared_ptr<Repository> repository) {
+controller::Controller::Controller(shared_ptr<CrudRepository> repository) {
     this->repository = std::move(repository);
 }
 
@@ -232,10 +232,8 @@ shared_ptr<vector<Scooter>> controller::Controller::getAllReservedScootersOfAnUs
     return repository->getAllScootersReservedByAnUser(std::move(userName));
 }
 
-void controller::Controller::save() {
-    repository->saveToFile("data.csv");
-}
 
-void controller::Controller::load() {
-    repository->loadFromFile("data.csv");
+void controller::Controller::load()
+{
+    repository->loadFromFile();
 }

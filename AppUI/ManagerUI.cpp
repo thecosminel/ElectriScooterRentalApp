@@ -11,7 +11,6 @@ bool managerUi::ManagerUI::run()
 {
     controller->load();
     cout << "\n\n\nManager interface -->" << endl;
-    logIn();
     char choice;
     do
     {
@@ -193,21 +192,10 @@ void managerUi::ManagerUI::displayAllScootersSortedByID()
 managerUi::ManagerUI::ManagerUI(shared_ptr<Controller> controller)
 {
     this->controller = std::move(controller);
-    this->saveActions = false;
 }
 
-void managerUi::ManagerUI::exit()
+void managerUi::ManagerUI::exit() //NOLINT
 {
     cout << "\n\n Closing app.....";
-    if (saveActions)
-    {
-        controller->save();
-    }
 }
 
-void managerUi::ManagerUI::logIn()
-{
-    // Chose if actions are to be persistent saved
-    this->saveActions = choseIfSaveActions();
-    cout << endl;
-}

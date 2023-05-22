@@ -46,7 +46,7 @@ void repository::CsvFileRepository::updateScooterInfo(const Scooter& oldScooter,
 }
 
 //vector<Scooter> repository::CsvFileRepository::getAllScootersFromRepo() const
-shared_ptr<vector<Scooter>>  repository::CsvFileRepository::getAllScootersFromRepo() const
+shared_ptr<vector<Scooter>>  repository::CsvFileRepository::getAllScootersFromRepo()
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const auto& scooter : Scooters)
@@ -77,8 +77,9 @@ void repository::CsvFileRepository::saveToFile(const std::string& fileName)
     }
 }
 
-void repository::CsvFileRepository::loadFromFile(const std::string& fileName)
+void repository::CsvFileRepository::loadFromFile()
 {
+    const std::string& fileName = "data.csv";
     Scooters.clear();
     ifstream file(fileName);
     std::string line;

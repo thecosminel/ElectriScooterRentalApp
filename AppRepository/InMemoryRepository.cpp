@@ -47,8 +47,9 @@ void repository::InMemoryRepository::updateScooterInfo(const Scooter& oldScooter
 
 
 
-void repository::InMemoryRepository::loadFromFile(const std::string& fileName)
+void repository::InMemoryRepository::loadFromFile()
 {
+    const string &fileName = "data.csv";
     ifstream file(fileName);
     if (file.is_open())
     {
@@ -167,7 +168,7 @@ shared_ptr<vector<Scooter>> repository::InMemoryRepository::getAllScootersReserv
     return result;
 }
 
-shared_ptr<vector<Scooter>> repository::InMemoryRepository::getAllScootersFromRepo() const
+shared_ptr<vector<Scooter>> repository::InMemoryRepository::getAllScootersFromRepo()
 {
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const auto& scooter : Scooters)
