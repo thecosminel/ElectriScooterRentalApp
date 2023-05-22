@@ -7,6 +7,7 @@
 #include <vector>
 #include <memory>
 #include "Domain/Scooter.h"
+#include "Utils/AuxiliaryFunctions.h"
 
 using namespace scooter;
 using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl;
@@ -39,40 +40,25 @@ namespace repository
         /// \param oldScooter
         virtual void updateScooterInfo(const Scooter& oldScooter, const Scooter& updatedScooter) = 0;
 
-        virtual shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) = 0;
-        // kmMin = -1 -> no min limit ..... same for kmMax
-        virtual shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax) = 0;
-        virtual shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) = 0;
-        virtual shared_ptr<vector<Scooter>> getAllParkedScooters() = 0;
-        virtual Scooter getScooterById (string id) = 0;
-
-        /// get all the electric scooters in the repository
-        /// \return
-        [[nodiscard]] virtual  shared_ptr<vector<Scooter>> getAllScootersFromRepo() const = 0;
-
-        /// method for saving to file
-        /// \param fileName
-        virtual void saveToFile(const string &fileName) = 0;
-
         /// method for loading from file
         /// \param fileName
         virtual void loadFromFile(const string &fileName) = 0;
     };
 
 
-    class Repository : CrudRepository{
+    class InMemoryRepository : CrudRepository{
     private:
         vector<Scooter> Scooters;
 
     public:
         ///default constructor
-        Repository() = default;
+        InMemoryRepository() = default;
 
-        Repository(Repository &repository) = default;
-        Repository& operator=(const Repository& repository) = default;
+        InMemoryRepository(InMemoryRepository &repository) = default;
+        InMemoryRepository& operator=(const InMemoryRepository& repository) = default;
 
         ///default destructor
-        ~Repository() = default;
+        ~InMemoryRepository() = default;
 
         /// add an electric scooter to the repository
         /// \param scooter
@@ -88,18 +74,38 @@ namespace repository
 
         /// get all the electric scooters in the repository
         /// \return
-        [[nodiscard]] shared_ptr<vector<Scooter>> getAllScootersFromRepo() const override;
+        shared_ptr<vector<Scooter>> getAllScootersFromRepo() const;
 
-        shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) override;
-        // kmMin = -1 -> no min limit ..... same for kmMax
-        shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax) override;
-        shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) override;
-        shared_ptr<vector<Scooter>> getAllParkedScooters() override;
-        Scooter getScooterById (string id) override;
+        /// Gets all scooters with given location from repo
+        /// \param location
+        /// \return all matching scooters
+        shared_ptr<vector<Scooter>> getAllScootersByLocation (string location);
 
-        /// method for saving to file
-        /// \param fileName
-        void saveToFile(const string &fileName) override;
+        /// Gets all scooters with km between two given values
+        /// \param kmMin
+        /// \param kmMax
+        /// \return matching scooters
+        shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax);
+
+        /// Gets all scooters with dates between two given values
+        /// \param dateMin
+        /// \param dateMax
+        /// \return matching scooters
+        shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax);
+
+        /// Gets all parked scooters (they can be reserved
+        /// \return parked scooters
+        shared_ptr<vector<Scooter>> getAllParkedScooters();
+
+        /// Gets scooters from repo with given ID
+        /// \param id
+        /// \return scooters with given id
+        Scooter getScooterById (string id);
+
+        /// Gets all scooters reserved by an user
+        /// \param userName
+        /// \return matching scooters
+        shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName);
 
         /// method for loading from file
         /// \param fileName

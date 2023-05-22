@@ -10,7 +10,7 @@ using std::cout;
 using namespace controller;
 
 void testReserveScooter() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
@@ -24,7 +24,7 @@ void testReserveScooter() {
 }
 
 void testAddScooterToRepo() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     Controller controller(repository);
 
     string model = "gush";
@@ -61,7 +61,7 @@ void testAddScooterToRepo() {
 }
 
 void testDeleteScooterFromRepo() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
@@ -76,7 +76,7 @@ void testDeleteScooterFromRepo() {
 }
 
 void testModifyScooterFromRepo() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
@@ -90,7 +90,7 @@ void testModifyScooterFromRepo() {
 }
 
 void testFilterScootersByLocation() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
@@ -110,7 +110,7 @@ void testFilterScootersByLocation() {
 }
 
 void testFilterScootersByKm() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
@@ -130,7 +130,7 @@ void testFilterScootersByKm() {
 }
 
 void testFilterScootersByDate() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
@@ -150,7 +150,7 @@ void testFilterScootersByDate() {
 }
 
 void testSortScootersByAge() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
@@ -166,7 +166,7 @@ void testSortScootersByAge() {
 }
 
 void testSortScootersByID() {
-    auto repository = std::make_shared<Repository>();
+    auto repository = std::make_shared<InMemoryRepository>();
     repository->addScooter(Scooter("ABC", "Model1", "10.12.2022", 100.0, "New York", PARKED));
     repository->addScooter(Scooter("GHI", "Model3", "20.08.2022", 300.0, "San Francisco", PARKED));
     repository->addScooter(Scooter("DEF", "Model2", "05.06.2021", 200.0, "Los Angeles", PARKED));

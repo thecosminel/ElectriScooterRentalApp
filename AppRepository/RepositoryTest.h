@@ -3,21 +3,21 @@
 //
 #pragma once
 
-#include "Repository.h"
+#include "InMemoryRepository.h"
 
 /// unit test for add method
 /// \param repository
-void testAddScooter(repository::Repository& repository);
+void testAddScooter(repository::InMemoryRepository& repository);
 
 /// unit test for remove method
 /// \param repository
-void testRemoveScooter(repository::Repository& repository);
+void testRemoveScooter(repository::InMemoryRepository& repository);
 
 /// unit test for update method
 /// \param repository
-void testUpdateScooter(repository::Repository& repository);
+void testUpdateScooter(repository::InMemoryRepository& repository);
 
-void testSaveToFile(repository::Repository& repository, const std::string& fileName);
+void testSaveToFile(repository::InMemoryRepository& repository, const std::string& fileName);
 
 void testAllRepo();
 
