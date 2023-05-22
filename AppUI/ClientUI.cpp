@@ -20,8 +20,8 @@ bool clientUi::ClientUI::run()
         pressEnterToContinue();
         cout << "Choose option: " << endl;
         cout << "  1. Search scooter by location" << endl;
-        cout << "  2. Display scooters with km less than x" << endl;
-        cout << "  3. Display scooters newer than date" << endl;
+        cout << "  2. Display scooters with km between x and y" << endl;
+        cout << "  3. Display scooters between two manufacturing dates" << endl;
         cout << "  4. Print available scooters to reserve" << endl; // Implement
         cout << "  5. Reserve scooter" << endl;
         cout << "  6. Print my reserved scooters" << endl; // Implement
@@ -58,6 +58,7 @@ bool clientUi::ClientUI::run()
                 break;
             case 'R':
             case 'r':
+                exit();
                 return true;
             case 'X':
             case 'x':

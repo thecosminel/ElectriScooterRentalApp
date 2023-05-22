@@ -15,7 +15,8 @@ controller::Controller::Controller(shared_ptr<Repository> repository) {
 controller::Controller::~Controller() = default;
 
 string controller::Controller::generateID() {
-    string ID, s1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string ID = "---";
+    string s1 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int len = static_cast<int>(s1.length());
 
     for(int i = 0; i < len; i++) {

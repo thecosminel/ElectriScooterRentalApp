@@ -21,8 +21,8 @@ bool managerUi::ManagerUI::run()
         cout << "  2. Delete existing scooter" << endl;
         cout << "  3. Modify existing scooter" << endl;
         cout << "  4. Search scooter by location" << endl;
-        cout << "  5. Display scooters with km less than x" << endl;
-        cout << "  6. Display scooters newer than date" << endl;
+        cout << "  5. Display scooters with km between two values" << endl;
+        cout << "  6. Display scooters manufactured between two dates" << endl;
         cout << "  7. Display all scooters sorted ascending by manufacturing date" << endl;
         cout << "  8. Display all scooters sorted ascending by ID" << endl;
         cout << "  R. Return to main ui" << endl;
@@ -69,6 +69,7 @@ bool managerUi::ManagerUI::run()
                 break;
             case 'R':
             case 'r':
+                exit();
                 return true;
             case 'X':
             case 'x':
