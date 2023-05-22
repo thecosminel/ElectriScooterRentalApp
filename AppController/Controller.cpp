@@ -9,7 +9,7 @@
 #include <utility>
 using std::vector;
 
-controller::Controller::Controller(shared_ptr<Repository> repository)
+controller::Controller::Controller(shared_ptr<InMemoryRepository> repository)
 {
     this->repository = std::move(repository);
 }
