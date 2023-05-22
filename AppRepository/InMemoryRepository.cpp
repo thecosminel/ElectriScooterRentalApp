@@ -5,8 +5,8 @@
 #include <iostream>
 #include <fstream>
 #include <memory>
-
-void repository::InMemoryRepository::addScooter(const Scooter &scooter)
+//modificare
+void repository::Repository::addScooter(const Scooter &scooter)
 {
     Scooters.push_back(scooter);
 }
@@ -43,11 +43,38 @@ void repository::InMemoryRepository::updateScooterInfo(const Scooter& oldScooter
         (*it).setKilometers(updatedScooter.getKilometers());
         (*it).setLocation(updatedScooter.getLocation());
         (*it).setStatus(updatedScooter.getStatus());
+        (*it).setUser(updatedScooter.getUser());
     }
 }
 
+//vector<Scooter> repository::Repository::getAllScootersFromRepo() const
+shared_ptr<vector<Scooter>>  repository::Repository::getAllScootersFromRepo() const
+{
+    return Scooters;
+}
 
-
+void repository::Repository::saveToFile(const std::string& fileName)
+{
+    std::ofstream file(fileName);
+    if (file.is_open())
+    {
+        file << Scooters.size() << endl;
+        for (const auto& scooter : Scooters)
+        {
+            file << scooter.getIdentifier() << ' ';
+            file << scooter.getModel() << ' ';
+            file << scooter.getDate() << ' ';
+            file << scooter.getKilometers() << ' ';
+            file << scooter.getLocation() << ' ';
+            file << static_cast<int>(scooter.getStatus()) << endl;
+        }
+        file.close();
+    }
+    else
+    {
+        std::cout << "Error opening file: " << fileName << endl;
+    }
+}
 
 
 void repository::InMemoryRepository::loadFromFile(const std::string& fileName)
@@ -123,8 +150,8 @@ shared_ptr<vector<Scooter>> repository::InMemoryRepository::getAllScootersByAgeB
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
     {
-        string date = scooter.getDate();
-        if (compareManufacturingDates(dateMin, date) && compareManufacturingDates(date, dateMax))
+       string date = scooter.getDate();
+        if (date >= dateMin && date <= dateMax)
         {
             result->push_back(scooter);
         }

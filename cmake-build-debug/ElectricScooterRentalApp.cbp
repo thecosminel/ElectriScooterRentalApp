@@ -107,16 +107,10 @@
 		<Unit filename="W:/Facultate/OOP/ScooterApp/AppController/ControllerTest.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/CsvFileRepository.cpp">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/Repository.cpp">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
-		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/CsvFileRepository.h">
-			<Option target="ElectricScooterRentalApp"/>
-		</Unit>
-		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/InMemoryRepository.cpp">
-			<Option target="ElectricScooterRentalApp"/>
-		</Unit>
-		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/InMemoryRepository.h">
+		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/Repository.h">
 			<Option target="ElectricScooterRentalApp"/>
 		</Unit>
 		<Unit filename="W:/Facultate/OOP/ScooterApp/AppRepository/RepositoryTest.cpp">

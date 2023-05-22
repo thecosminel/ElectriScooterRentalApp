@@ -200,53 +200,29 @@ AppController/ControllerTest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppController/ControllerTest.cpp.s
 .PHONY : AppController/ControllerTest.cpp.s
 
-AppRepository/CsvFileRepository.obj: AppRepository/CsvFileRepository.cpp.obj
-.PHONY : AppRepository/CsvFileRepository.obj
+AppRepository/Repository.obj: AppRepository/Repository.cpp.obj
+.PHONY : AppRepository/Repository.obj
 
 # target to build an object file
-AppRepository/CsvFileRepository.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj
-.PHONY : AppRepository/CsvFileRepository.cpp.obj
+AppRepository/Repository.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj
+.PHONY : AppRepository/Repository.cpp.obj
 
-AppRepository/CsvFileRepository.i: AppRepository/CsvFileRepository.cpp.i
-.PHONY : AppRepository/CsvFileRepository.i
-
-# target to preprocess a source file
-AppRepository/CsvFileRepository.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.i
-.PHONY : AppRepository/CsvFileRepository.cpp.i
-
-AppRepository/CsvFileRepository.s: AppRepository/CsvFileRepository.cpp.s
-.PHONY : AppRepository/CsvFileRepository.s
-
-# target to generate assembly for a file
-AppRepository/CsvFileRepository.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.s
-.PHONY : AppRepository/CsvFileRepository.cpp.s
-
-AppRepository/InMemoryRepository.obj: AppRepository/InMemoryRepository.cpp.obj
-.PHONY : AppRepository/InMemoryRepository.obj
-
-# target to build an object file
-AppRepository/InMemoryRepository.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj
-.PHONY : AppRepository/InMemoryRepository.cpp.obj
-
-AppRepository/InMemoryRepository.i: AppRepository/InMemoryRepository.cpp.i
-.PHONY : AppRepository/InMemoryRepository.i
+AppRepository/Repository.i: AppRepository/Repository.cpp.i
+.PHONY : AppRepository/Repository.i
 
 # target to preprocess a source file
-AppRepository/InMemoryRepository.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.i
-.PHONY : AppRepository/InMemoryRepository.cpp.i
+AppRepository/Repository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.i
+.PHONY : AppRepository/Repository.cpp.i
 
-AppRepository/InMemoryRepository.s: AppRepository/InMemoryRepository.cpp.s
-.PHONY : AppRepository/InMemoryRepository.s
+AppRepository/Repository.s: AppRepository/Repository.cpp.s
+.PHONY : AppRepository/Repository.s
 
 # target to generate assembly for a file
-AppRepository/InMemoryRepository.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.s
-.PHONY : AppRepository/InMemoryRepository.cpp.s
+AppRepository/Repository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ElectricScooterRentalApp.dir\build.make CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.s
+.PHONY : AppRepository/Repository.cpp.s
 
 AppRepository/RepositoryTest.obj: AppRepository/RepositoryTest.cpp.obj
 .PHONY : AppRepository/RepositoryTest.obj
@@ -410,12 +386,9 @@ help:
 	@echo ... AppController/ControllerTest.obj
 	@echo ... AppController/ControllerTest.i
 	@echo ... AppController/ControllerTest.s
-	@echo ... AppRepository/CsvFileRepository.obj
-	@echo ... AppRepository/CsvFileRepository.i
-	@echo ... AppRepository/CsvFileRepository.s
-	@echo ... AppRepository/InMemoryRepository.obj
-	@echo ... AppRepository/InMemoryRepository.i
-	@echo ... AppRepository/InMemoryRepository.s
+	@echo ... AppRepository/Repository.obj
+	@echo ... AppRepository/Repository.i
+	@echo ... AppRepository/Repository.s
 	@echo ... AppRepository/RepositoryTest.obj
 	@echo ... AppRepository/RepositoryTest.i
 	@echo ... AppRepository/RepositoryTest.s

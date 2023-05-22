@@ -28,13 +28,13 @@ void pressEnterToContinue()
 #endif
 }
 
-void printScooterContainer(std::vector<Scooter> scooterContainer)
+void printScooterContainer(const shared_ptr<vector<Scooter>>& scooterContainer)
 {
     cout << endl;
-
-    for (int i = 0; i < scooterContainer.size(); i++)
+    vector<Scooter>& scooterVector = *scooterContainer;
+    for (int i = 0; i < scooterVector.size(); i++)
     {
-        Scooter scooter = scooterContainer[i];
+        Scooter scooter = scooterVector[i];
         printIndexing(i+1);
         cout << "ID: " << scooter.getIdentifier() << "  ";
         cout << "Model: " << scooter.getModel();
@@ -123,6 +123,20 @@ bool checkDateFormat(const string& date)
     return true;
 }
 
+string enterUserName()
+{
+    string userName;
+    cout << endl;
+    cout << "Enter user name (must be alphanumeric): ";
+    cin >> userName;
+    while (!checkAlphanumericString(userName))
+    {
+        cout << endl << "Please enter an alphanumeric ID: ";
+        cin >> userName;
+    }
+    return userName;
+}
+
 string enterModel()
 {
     string model;
@@ -132,9 +146,35 @@ string enterModel()
     return model;
 }
 
+pair <string, string> enterManufacturingDates()
+{
+    pair <string, string> dates;
+    string manufacturingDateMin;
+    cout << endl;
+    cout << "Enter minimum manufacturing date: ";
+    cin >> manufacturingDateMin;
+    while (!checkDateFormat(manufacturingDateMin))
+    {
+        cout << endl << "Please enter a valid manufacturing date:";
+        cin >> manufacturingDateMin;
+    }
+    dates.first = manufacturingDateMin;
+    string manufacturingDateMax;
+    cout << endl;
+    cout << "Enter maximum manufacturing date: ";
+    cin >> manufacturingDateMax;
+    while (!checkDateFormat(manufacturingDateMax))
+    {
+        cout << endl << "Please enter a valid manufacturing date:";
+        cin >> manufacturingDateMax;
+    }
+    dates.second = manufacturingDateMax;
+    return dates;
+}
+
 string enterManufacturingDate()
 {
-    string manufacturingDate;
+    string  manufacturingDate;
     cout << endl;
     cout << "Enter manufacturing date: ";
     cin >> manufacturingDate;
@@ -144,6 +184,21 @@ string enterManufacturingDate()
         cin >> manufacturingDate;
     }
     return manufacturingDate;
+}
+
+pair<double, double> enterKmMultiple()
+{
+    double kmMin, kmMax;
+    cout << endl;
+    cout << "Enter km min: ";
+    cin >> kmMin;
+    cout << endl;
+    cout << "Enter km max: ";
+    cin >> kmMax;
+    pair<double, double> km;
+    km.first = kmMin;
+    km.second = kmMax;
+    return km;
 }
 
 double enterKm()
@@ -192,6 +247,36 @@ string enterID()
         cin >> ID;
     }
     return ID;
+}
+
+bool choseIfSaveActions()
+{
+    string choice;
+    cout << endl << "Save your future actions?";
+    cout << endl << "1. Yes";
+    cout << endl << "2. No";
+    cout << endl << "My choice: "; cin >> choice;
+    while (choice != "1" && choice != "2" && choice != "3")
+    {
+        cout << endl << "Chose 1 or 2!!";
+        cout << endl << "My choice: "; cin >> choice;
+    }
+    if (choice == "1")
+        return true;
+    else
+        return false;
+}
+
+bool checkAlphanumericString(const string& str)
+{
+    for(char c : str) // NOLINT
+    {
+        if (!isalnum(c))
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 bool compareManufacturingDates(const string& manufacturingDate, const string& scooterManufacturingDate) {

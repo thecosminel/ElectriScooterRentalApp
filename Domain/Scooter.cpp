@@ -96,3 +96,13 @@ scooter::Scooter &scooter::Scooter::operator=(const Scooter &scooter){
     this->kilometers = scooter.kilometers;
     return *this;
 }
+
+string scooter::Scooter::getUser() const
+{
+    return user;
+}
+
+void scooter::Scooter::setUser(string scooterUser)
+{
+    this->user = std::move(scooterUser);
+}

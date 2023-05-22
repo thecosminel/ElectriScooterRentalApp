@@ -9,19 +9,23 @@ using std::cout, std::cin, std::endl;
 
 // Sunt smecher
 
-void clientUi::ClientUI::run()
+bool clientUi::ClientUI::run()
 {
     controller->load();
     cout << "\n\n\nDear Client, welcome to our Electric Scooter Rental App!!" << endl;
+    logIn();
     char choice;
     do
     {
         pressEnterToContinue();
         cout << "Choose option: " << endl;
         cout << "  1. Search scooter by location" << endl;
-        cout << "  2. Display scooters with km less than x" << endl;
-        cout << "  3. Display scooters newer than date" << endl;
-        cout << "  4. Reserve scooter" << endl;
+        cout << "  2. Display scooters with km between x and y" << endl;
+        cout << "  3. Display scooters between two manufacturing dates" << endl;
+        cout << "  4. Print available scooters to reserve" << endl; // Implement
+        cout << "  5. Reserve scooter" << endl;
+        cout << "  6. Print my reserved scooters" << endl; // Implement
+        cout << "  R. Return to main UI" << endl;
         cout << "  X. Close app" << endl;
         cin >> choice;
         cout << endl;
@@ -41,39 +45,63 @@ void clientUi::ClientUI::run()
                 displayScootersFilteredByAge();
                 break;
             case '4':
+                cout << "Print available scooters to reserve: ";
+                displayScootersThatCanBeReserved();
+                break;
+            case '5':
                 cout << "Reserve scooter: ";
                 reserveScooter();
                 break;
+            case '6':
+                cout << "Print my reserved scooters: ";
+                displayScootersReservedByUser();
+                break;
+            case 'R':
+            case 'r':
+                exit();
+                return true;
             case 'X':
             case 'x':
                 exit();
-                return;
+                return false;
             default:
                 cout << "Not an option...";
                 break;
         }
     }
     while (choice);
+    return false;
+}
+
+void clientUi::ClientUI::logIn()
+{
+    // Username
+    string username = enterUserName();
+    this->userName = username;
+    // Chose if actions are to be persistent saved
+    this->saveActions = choseIfSaveActions();
+    cout << endl;
 }
 
 void clientUi::ClientUI::searchScooterByLocation()
 {
     string location = enterLocation();
-    vector<Scooter> scooters = controller->filterScootersByLocation(location);
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByLocation(location);
     printScooterContainer(scooters);
 }
 
 void clientUi::ClientUI::displayScootersFilteredByKM()
 {
-    double km = enterKm();
-    vector<Scooter> scooters = controller->filterScootersByKm(km);
+    pair<double, double> km = enterKmMultiple();
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByKmBetweenTwoValues(km.first, km.second);
     printScooterContainer(scooters);
 }
 
 void clientUi::ClientUI::displayScootersFilteredByAge()
 {
-    string manufacturingDate = enterManufacturingDate();
-    vector<Scooter> scooters = controller->filterScootersByDate(manufacturingDate);
+    pair <string, string> dates;
+    dates = enterManufacturingDates();
+    shared_ptr<vector<Scooter>> scooters = controller->filterScootersByAgeBetweenTwoDates(dates.first, dates.second);
     printScooterContainer(scooters);
 }
 
@@ -84,7 +112,7 @@ void clientUi::ClientUI::reserveScooter()
     {
         cout << endl << "Please enter a valid ID: ";
     }
-    if (controller->reserveScooter(ID))
+    if (controller->reserveScooter(ID, userName))
     {
         cout << "Scooter " << ID << " successfully reserved";
     }
@@ -97,11 +125,26 @@ void clientUi::ClientUI::reserveScooter()
 clientUi::ClientUI::ClientUI(shared_ptr<Controller> controller)
 {
     this->controller = std::move(controller);
+    this->userName = "";
+    this->saveActions = false;
 }
 
 void clientUi::ClientUI::exit()
 {
     cout << "\n\n Closing app.....";
-    controller->save();
+    if (saveActions)
+        controller->save();
+}
+
+void clientUi::ClientUI::displayScootersReservedByUser()
+{
+    shared_ptr<vector<Scooter>> scooters = controller->getAllReservedScootersOfAnUser(userName);
+    printScooterContainer(scooters);
+}
+
+void clientUi::ClientUI::displayScootersThatCanBeReserved()
+{
+    shared_ptr<vector<Scooter>> scooters = controller->filterParkedScooters();
+    printScooterContainer(scooters);
 }
 

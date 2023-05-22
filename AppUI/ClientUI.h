@@ -2,7 +2,7 @@
 #include "AppController/Controller.h"
 #include <memory>
 #include "Utils/AuxiliaryFunctions.h"
-using std::shared_ptr;
+using std::shared_ptr, std::pair;
 
 using namespace controller;
 
@@ -11,6 +11,8 @@ namespace clientUi
     class ClientUI{
     private:
         shared_ptr<Controller> controller;
+        string userName;
+        bool saveActions;
 
     public:
         /// Explicit constructor
@@ -26,7 +28,11 @@ namespace clientUi
         ClientUI& operator=(const ClientUI& repository) = default;
 
         /// Method to run the app
-        void run();
+        /// \return true to go back to main UI, false to exit
+        bool run();
+
+        /// Insert userName and chose if actions should be saved
+        void logIn();
 
         /// Method for exiting the app
         void exit();
@@ -39,6 +45,12 @@ namespace clientUi
 
         /// Method for displaying certain scooters filtered by age
         void displayScootersFilteredByAge();
+
+        /// Method for displaying certain scooters reserved by an user
+        void displayScootersReservedByUser();
+
+        /// Method for displaying reservable scooters (parked)
+        void displayScootersThatCanBeReserved();
 
         /// Method for reserving a scooter
         void reserveScooter();

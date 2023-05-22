@@ -173,20 +173,20 @@ CMakeFiles/ElectricScooterRentalApp.dir/App.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ElectricScooterRentalApp.dir/App.cpp.s"
 	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S W:\Facultate\OOP\ScooterApp\App.cpp -o CMakeFiles\ElectricScooterRentalApp.dir\App.cpp.s
 
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/flags.make
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/includes_CXX.rsp
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj: W:/Facultate/OOP/ScooterApp/AppRepository/InMemoryRepository.cpp
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=W:\Facultate\OOP\ScooterApp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj"
-	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj -MF CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\InMemoryRepository.cpp.obj.d -o CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\InMemoryRepository.cpp.obj -c W:\Facultate\OOP\ScooterApp\AppRepository\InMemoryRepository.cpp
+CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/flags.make
+CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/includes_CXX.rsp
+CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj: W:/Facultate/OOP/ScooterApp/AppRepository/Repository.cpp
+CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=W:\Facultate\OOP\ScooterApp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj"
+	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj -MF CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\Repository.cpp.obj.d -o CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\Repository.cpp.obj -c W:\Facultate\OOP\ScooterApp\AppRepository\Repository.cpp
 
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.i"
-	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E W:\Facultate\OOP\ScooterApp\AppRepository\InMemoryRepository.cpp > CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\InMemoryRepository.cpp.i
+CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.i"
+	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E W:\Facultate\OOP\ScooterApp\AppRepository\Repository.cpp > CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\Repository.cpp.i
 
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.s"
-	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S W:\Facultate\OOP\ScooterApp\AppRepository\InMemoryRepository.cpp -o CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\InMemoryRepository.cpp.s
+CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.s"
+	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S W:\Facultate\OOP\ScooterApp\AppRepository\Repository.cpp -o CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\Repository.cpp.s
 
 CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/RepositoryTest.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/flags.make
 CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/RepositoryTest.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/includes_CXX.rsp
@@ -218,21 +218,6 @@ CMakeFiles/ElectricScooterRentalApp.dir/AppController/ControllerTest.cpp.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ElectricScooterRentalApp.dir/AppController/ControllerTest.cpp.s"
 	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S W:\Facultate\OOP\ScooterApp\AppController\ControllerTest.cpp -o CMakeFiles\ElectricScooterRentalApp.dir\AppController\ControllerTest.cpp.s
 
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/flags.make
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/includes_CXX.rsp
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj: W:/Facultate/OOP/ScooterApp/AppRepository/CsvFileRepository.cpp
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj: CMakeFiles/ElectricScooterRentalApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=W:\Facultate\OOP\ScooterApp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj"
-	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj -MF CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\CsvFileRepository.cpp.obj.d -o CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\CsvFileRepository.cpp.obj -c W:\Facultate\OOP\ScooterApp\AppRepository\CsvFileRepository.cpp
-
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.i"
-	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E W:\Facultate\OOP\ScooterApp\AppRepository\CsvFileRepository.cpp > CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\CsvFileRepository.cpp.i
-
-CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.s"
-	"D:\Programs\CLion 2023.1.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S W:\Facultate\OOP\ScooterApp\AppRepository\CsvFileRepository.cpp -o CMakeFiles\ElectricScooterRentalApp.dir\AppRepository\CsvFileRepository.cpp.s
-
 # Object files for target ElectricScooterRentalApp
 ElectricScooterRentalApp_OBJECTS = \
 "CMakeFiles/ElectricScooterRentalApp.dir/AppUI/ClientUI.cpp.obj" \
@@ -242,10 +227,9 @@ ElectricScooterRentalApp_OBJECTS = \
 "CMakeFiles/ElectricScooterRentalApp.dir/Domain/Scooter.cpp.obj" \
 "CMakeFiles/ElectricScooterRentalApp.dir/Utils/AuxiliaryFunctions.cpp.obj" \
 "CMakeFiles/ElectricScooterRentalApp.dir/App.cpp.obj" \
-"CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj" \
+"CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj" \
 "CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/RepositoryTest.cpp.obj" \
-"CMakeFiles/ElectricScooterRentalApp.dir/AppController/ControllerTest.cpp.obj" \
-"CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj"
+"CMakeFiles/ElectricScooterRentalApp.dir/AppController/ControllerTest.cpp.obj"
 
 # External object files for target ElectricScooterRentalApp
 ElectricScooterRentalApp_EXTERNAL_OBJECTS =
@@ -257,15 +241,14 @@ ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/AppControl
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/Domain/Scooter.cpp.obj
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/Utils/AuxiliaryFunctions.cpp.obj
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/App.cpp.obj
-ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/InMemoryRepository.cpp.obj
+ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/RepositoryTest.cpp.obj
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/AppController/ControllerTest.cpp.obj
-ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CsvFileRepository.cpp.obj
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/build.make
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/linkLibs.rsp
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/objects1
 ElectricScooterRentalApp.exe: CMakeFiles/ElectricScooterRentalApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=W:\Facultate\OOP\ScooterApp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ElectricScooterRentalApp.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=W:\Facultate\OOP\ScooterApp\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ElectricScooterRentalApp.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ElectricScooterRentalApp.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
