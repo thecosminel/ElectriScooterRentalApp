@@ -42,12 +42,35 @@ namespace repository
         /// \param oldScooter
         virtual void updateScooterInfo(const Scooter& oldScooter, const Scooter& updatedScooter) = 0;
 
+        /// Gets all scooters with given location from repo
+        /// \param location
+        /// \return all matching scooters
         virtual shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) = 0;
-        // kmMin = -1 -> no min limit ..... same for kmMax
+
+        /// Gets all scooters with km between two given values
+        /// \param kmMin
+        /// \param kmMax
+        /// \return matching scooters
         virtual shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax) = 0;
+
+        /// Gets all scooters with dates between two given values
+        /// \param dateMin
+        /// \param dateMax
+        /// \return matching scooters
         virtual shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) = 0;
+
+        /// Gets all parked scooters (they can be reserved
+        /// \return parked scooters
         virtual shared_ptr<vector<Scooter>> getAllParkedScooters() = 0;
+
+        /// Gets scooters from repo with given ID
+        /// \param id
+        /// \return scooters with given id
         virtual Scooter getScooterById (string id) = 0;
+
+        /// Gets all scooters reserved by an user
+        /// \param userName
+        /// \return matching scooters
         virtual shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName) = 0;
 
         /// get all the electric scooters in the repository
@@ -94,12 +117,35 @@ namespace repository
         /// \return
         [[nodiscard]] shared_ptr<vector<Scooter>> getAllScootersFromRepo() const override;
 
+        /// Gets all scooters with given location from repo
+        /// \param location
+        /// \return all matching scooters
         shared_ptr<vector<Scooter>> getAllScootersByLocation (string location) override;
-        // kmMin = -1 -> no min limit ..... same for kmMax
+
+        /// Gets all scooters with km between two given values
+        /// \param kmMin
+        /// \param kmMax
+        /// \return matching scooters
         shared_ptr<vector<Scooter>> getAllScootersByKmBetweenTwoValues (double kmMin, double kmMax) override;
+
+        /// Gets all scooters with dates between two given values
+        /// \param dateMin
+        /// \param dateMax
+        /// \return matching scooters
         shared_ptr<vector<Scooter>> getAllScootersByAgeBetweenTwoDates (string dateMin, string dateMax) override;
+
+        /// Gets all parked scooters (they can be reserved
+        /// \return parked scooters
         shared_ptr<vector<Scooter>> getAllParkedScooters() override;
+
+        /// Gets scooters from repo with given ID
+        /// \param id
+        /// \return scooters with given id
         Scooter getScooterById (string id) override;
+
+        /// Gets all scooters reserved by an user
+        /// \param userName
+        /// \return matching scooters
         shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName) override;
 
         /// method for saving to file

@@ -49,6 +49,7 @@ namespace clientUi
         /// Method for displaying certain scooters reserved by an user
         void displayScootersReservedByUser();
 
+        /// Method for displaying reservable scooters (parked)
         void displayScootersThatCanBeReserved();
 
         /// Method for reserving a scooter
