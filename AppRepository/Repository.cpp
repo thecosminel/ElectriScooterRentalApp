@@ -83,6 +83,7 @@ void repository::Repository::saveToFile(const std::string& fileName)
 
 void repository::Repository::loadFromFile(const std::string& fileName)
 {
+    Scooters.clear();
     ifstream file(fileName);
     std::string line;
     std::getline(file, line);
