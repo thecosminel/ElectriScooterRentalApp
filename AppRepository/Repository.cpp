@@ -162,7 +162,7 @@ shared_ptr<vector<Scooter>> repository::Repository::getAllScootersByAgeBetweenTw
     for (const Scooter& scooter : Scooters)
     {
        string date = scooter.getDate();
-        if (date >= dateMin && date <= dateMax)
+        if (compareManufacturingDates(dateMin, date) && compareManufacturingDates(date, dateMax))
         {
             result->push_back(scooter);
         }

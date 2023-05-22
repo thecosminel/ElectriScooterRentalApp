@@ -385,7 +385,8 @@ CMakeFiles/ElectricScooterRentalApp.dir/AppController/Controller.cpp.obj: C:/Use
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/string.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
-  C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain/Scooter.h
+  C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain/Scooter.h \
+  C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Utils/AuxiliaryFunctions.h
 
 CMakeFiles/ElectricScooterRentalApp.dir/AppController/ControllerTest.cpp.obj: C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/AppController/ControllerTest.cpp
 
@@ -577,6 +578,7 @@ CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/Repository.cpp.obj: C:/Use
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/string.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
   C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain/Scooter.h \
+  C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Utils/AuxiliaryFunctions.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
@@ -774,6 +776,7 @@ CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/RepositoryTest.cpp.obj: C:
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/string.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
   C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Domain/Scooter.h \
+  C:/Users/cosmi/OneDrive/Desktop/ElectricScooterRentalApp_Lab6/Utils/AuxiliaryFunctions.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cassert \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/x86_64-w64-mingw32/include/assert.h
 
