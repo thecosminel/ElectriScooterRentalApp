@@ -14,7 +14,7 @@ using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl, std::
 namespace repository
 {
 
-    class CsvFileRepository : CrudRepository{
+    class CsvFileRepository : public CrudRepository{
     private:
         vector<Scooter> Scooters;
 
@@ -23,7 +23,7 @@ namespace repository
         CsvFileRepository() = default;
 
         CsvFileRepository(CsvFileRepository &repository) = default;
-        CsvFileRepository& operator=(const CsvFileRepository& repository) = default;
+        CsvFileRepository& operator=(const CsvFileRepository& other);
 
         ///default destructor
         ~CsvFileRepository() = default;

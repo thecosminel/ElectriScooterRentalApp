@@ -115,7 +115,6 @@ clientUi::ClientUI::ClientUI(shared_ptr<Controller> controller)
 {
     this->controller = std::move(controller);
     this->userName = "";
-    this->saveActions = false;
 }
 
 void clientUi::ClientUI::exit() //NOLINT

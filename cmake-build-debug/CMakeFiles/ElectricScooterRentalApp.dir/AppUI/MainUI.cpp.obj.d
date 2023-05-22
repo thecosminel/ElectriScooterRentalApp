@@ -3,7 +3,7 @@ CMakeFiles/ElectricScooterRentalApp.dir/AppUI/MainUI.cpp.obj: \
  W:\Facultate\OOP\ScooterApp\AppUI\MainUI.h \
  W:\Facultate\OOP\ScooterApp\AppUI\ManagerUI.h \
  W:/Facultate/OOP/ScooterApp/AppController/Controller.h \
- W:/Facultate/OOP/ScooterApp/AppRepository/Repository.h \
+ W:/Facultate/OOP/ScooterApp/AppRepository/CrudRepository.h \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \

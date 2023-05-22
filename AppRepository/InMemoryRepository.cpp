@@ -175,3 +175,15 @@ shared_ptr<vector<Scooter>> repository::InMemoryRepository::getAllScootersFromRe
         result->push_back(scooter);
     return result;
 }
+
+repository::InMemoryRepository &repository::InMemoryRepository::operator=(const repository::InMemoryRepository &other) {
+    if (this == &other)
+    {
+        return *this;
+    }
+
+    // Perform deep copy of the Scooters vector
+    Scooters = other.Scooters;
+
+    return *this;
+}

@@ -13,16 +13,20 @@ using std::make_shared;
 using std::shared_ptr;
 
 int main() {
-//    shared_ptr<CrudRepository> repo_csv = <CsvFileRepository>();
+    // In memory
     shared_ptr<CrudRepository> repo_memo;
     repo_memo = make_shared<InMemoryRepository>();
+    // CSV
+    auto repo_csv = make_shared<CsvFileRepository>();
+    shared_ptr<CrudRepository> repo_csv_crude =repo_csv;
+    shared_ptr<Controller> ctrl;
     if (choseIfSaveActions())
     {
-        auto ctrl = make_shared<Controller>(repo_csv);
+        ctrl = make_shared<Controller>(repo_csv_crude);
     }
     else
     {
-        auto ctrl = make_shared<Controller>(repo_memo);
+        ctrl = make_shared<Controller>(repo_memo);
     }
     auto managerUI = make_shared<ManagerUI>(ctrl);
     auto clientUI = make_shared<ClientUI>(ctrl);

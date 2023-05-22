@@ -1,6 +1,8 @@
-CMakeFiles/ElectricScooterRentalApp.dir/AppController/Controller.cpp.obj: \
- W:\Facultate\OOP\ScooterApp\AppController\Controller.cpp \
- W:\Facultate\OOP\ScooterApp\AppController\Controller.h \
+CMakeFiles/ElectricScooterRentalApp.dir/App.cpp.obj: \
+ W:\Facultate\OOP\ScooterApp\App.cpp \
+ W:\Facultate\OOP\ScooterApp\AppUI/MainUI.h \
+ W:\Facultate\OOP\ScooterApp\AppUI/ManagerUI.h \
+ W:/Facultate/OOP/ScooterApp/AppController/Controller.h \
  W:/Facultate/OOP/ScooterApp/AppRepository/CrudRepository.h \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -188,4 +190,7 @@ CMakeFiles/ElectricScooterRentalApp.dir/AppController/Controller.cpp.obj: \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/x86_64-w64-mingw32/include/string.h \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
  W:/Facultate/OOP/ScooterApp/Domain/Scooter.h \
- W:/Facultate/OOP/ScooterApp/Utils/AuxiliaryFunctions.h
+ W:/Facultate/OOP/ScooterApp/Utils/AuxiliaryFunctions.h \
+ W:\Facultate\OOP\ScooterApp\AppUI/ClientUI.h \
+ W:\Facultate\OOP\ScooterApp\AppRepository/CsvFileRepository.h \
+ W:\Facultate\OOP\ScooterApp\AppRepository/InMemoryRepository.h

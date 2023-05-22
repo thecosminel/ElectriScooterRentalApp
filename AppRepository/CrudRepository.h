@@ -21,7 +21,7 @@ namespace repository {
 
         CrudRepository(CrudRepository &repository) = default;
 
-        CrudRepository &operator=(const CrudRepository &repository) = default;
+        CrudRepository &operator=(const CrudRepository &other);
 
         ///default destructor
         ~CrudRepository() = default;

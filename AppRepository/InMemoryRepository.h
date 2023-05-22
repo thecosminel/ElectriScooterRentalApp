@@ -14,7 +14,7 @@ using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl;
 
 namespace repository
 {
-    class InMemoryRepository : CrudRepository{
+    class InMemoryRepository : public CrudRepository{
     private:
         vector<Scooter> Scooters;
 
@@ -23,7 +23,7 @@ namespace repository
         InMemoryRepository() = default;
 
         InMemoryRepository(InMemoryRepository &repository) = default;
-        InMemoryRepository& operator=(const InMemoryRepository& repository) = default;
+        InMemoryRepository& operator=(const InMemoryRepository& other);
 
         ///default destructor
         ~InMemoryRepository() = default;

@@ -205,3 +205,15 @@ shared_ptr<vector<Scooter>> repository::CsvFileRepository::getAllScootersReserve
     }
     return result;
 }
+
+repository::CsvFileRepository &repository::CsvFileRepository::operator=(const repository::CsvFileRepository &other) {
+    if (this == &other)
+    {
+        return *this;
+    }
+
+    // Perform deep copy of the Scooters vector
+    Scooters = other.Scooters;
+
+    return *this;
+}

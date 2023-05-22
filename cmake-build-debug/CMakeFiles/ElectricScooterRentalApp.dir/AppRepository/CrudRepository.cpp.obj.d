@@ -1,7 +1,6 @@
-CMakeFiles/ElectricScooterRentalApp.dir/AppController/Controller.cpp.obj: \
- W:\Facultate\OOP\ScooterApp\AppController\Controller.cpp \
- W:\Facultate\OOP\ScooterApp\AppController\Controller.h \
- W:/Facultate/OOP/ScooterApp/AppRepository/CrudRepository.h \
+CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/CrudRepository.cpp.obj: \
+ W:\Facultate\OOP\ScooterApp\AppRepository\CrudRepository.cpp \
+ W:\Facultate\OOP\ScooterApp\AppRepository\CrudRepository.h \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  D:/Programs/CLion\ 2023.1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
