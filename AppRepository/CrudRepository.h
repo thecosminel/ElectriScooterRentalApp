@@ -72,9 +72,5 @@ namespace repository {
         /// \param userName
         /// \return matching scooters
         virtual shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName) = 0;
-
-        /// method for loading from file
-        /// \param fileName
-        virtual void loadFromFile() = 0;
     };
 };

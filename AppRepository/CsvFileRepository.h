@@ -18,9 +18,13 @@ namespace repository
     private:
         vector<Scooter> Scooters;
 
+        /// method for loading from file
+        /// \param fileName
+        void loadFromFile();
+
     public:
         ///default constructor
-        CsvFileRepository() = default;
+        CsvFileRepository();
 
         CsvFileRepository(CsvFileRepository &repository) = default;
         CsvFileRepository& operator=(const CsvFileRepository& other);
@@ -79,9 +83,5 @@ namespace repository
         /// method for saving to file
         /// \param fileName
         void saveToFile(const string &fileName = "data.csv");
-
-        /// method for loading from file
-        /// \param fileName
-        void loadFromFile() override;
     };
 }

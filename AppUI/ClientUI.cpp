@@ -11,7 +11,8 @@ using std::cout, std::cin, std::endl;
 
 bool clientUi::ClientUI::run()
 {
-    controller->load();
+    // Login
+    this->userName = enterUserName();
     cout << "\n\n\nDear Client, welcome to our Electric Scooter Rental App!!" << endl;
     char choice;
     do
@@ -101,7 +102,7 @@ void clientUi::ClientUI::reserveScooter()
     {
         cout << endl << "Please enter a valid ID: ";
     }
-    if (controller->reserveScooter(ID, userName))
+    if (controller->reserveScooter(ID, this->userName))
     {
         cout << "Scooter " << ID << " successfully reserved";
     }

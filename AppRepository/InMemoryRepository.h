@@ -18,9 +18,13 @@ namespace repository
     private:
         vector<Scooter> Scooters;
 
+        /// method for loading from file
+        /// \param fileName
+        void loadFromFile();
+
     public:
         ///default constructor
-        InMemoryRepository() = default;
+        InMemoryRepository();
 
         InMemoryRepository(InMemoryRepository &repository) = default;
         InMemoryRepository& operator=(const InMemoryRepository& other);
@@ -74,9 +78,5 @@ namespace repository
         /// \param userName
         /// \return matching scooters
         shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName) override;
-
-        /// method for loading from file
-        /// \param fileName
-        void loadFromFile() override;
     };
 }

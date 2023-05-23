@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <memory>
+#include <sstream>
 
 void repository::InMemoryRepository::addScooter(const Scooter &scooter)
 {
@@ -40,38 +41,44 @@ void repository::InMemoryRepository::updateScooterInfo(const Scooter& oldScooter
         (*it).setKilometers(updatedScooter.getKilometers());
         (*it).setLocation(updatedScooter.getLocation());
         (*it).setStatus(updatedScooter.getStatus());
+        (*it).setUser(updatedScooter.getUser());
     }
 }
 
-
-
-
-
 void repository::InMemoryRepository::loadFromFile()
 {
-    const string &fileName = "data.csv";
+    const std::string& fileName = "data.csv";
     ifstream file(fileName);
+    std::string line;
+    std::getline(file, line);
     if (file.is_open())
     {
-        Scooters.clear(); //clear the existing scooters before loading from file
-        int size;
-        file >> size;
-        for (int i = 0; i < size; ++i)
-        {
-            string identifier;
-            string model;
-            string date;
+
+        while (std::getline(file, line)) {
+            std::stringstream ss(line);
+            std::string element;
+
+            std::string identifier;
+            std::string model;
+            std::string date;
             double kilometers;
-            string location;
+            std::string location;
+            string userName;
             int status;
-            file >> identifier;
-            file >> model;
-            file >> date;
-            file >> kilometers;
-            file >> location;
-            file >> status;
+
+            // Read each element separated by commas
+            std::getline(ss, identifier, ',');
+            std::getline(ss, model, ',');
+            std::getline(ss, date, ',');
+            ss >> kilometers;
+            ss.ignore(); // Ignore the comma after 'kilometers'
+            std::getline(ss, location, ',');
+            std::getline(ss, userName, ',');
+            ss >> status;
+
             auto scooterStatus = static_cast<ScooterStatus>(status);
             Scooter scooter(identifier, model, date, kilometers, location, scooterStatus);
+            scooter.setUser(userName);
             Scooters.push_back(scooter);
         }
         file.close();
@@ -160,7 +167,7 @@ shared_ptr<vector<Scooter>> repository::InMemoryRepository::getAllScootersReserv
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
     {
-        if (scooter.getUser() == userName)
+        if (scooter.getUser() == userName && scooter.getStatus() == RESERVED)
         {
             result->push_back(scooter);
         }
@@ -186,4 +193,9 @@ repository::InMemoryRepository &repository::InMemoryRepository::operator=(const 
     Scooters = other.Scooters;
 
     return *this;
+}
+
+repository::InMemoryRepository::InMemoryRepository()
+{
+    loadFromFile();
 }

@@ -104,7 +104,5 @@ namespace controller
         /// \return shared pointer to a vector of scooters that have been reserved by the respective user
         shared_ptr<vector<Scooter>> getAllReservedScootersOfAnUser(string userName);
 
-        /// Load scooter instances to repo
-        void load();
     };
 }

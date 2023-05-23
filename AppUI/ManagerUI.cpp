@@ -9,7 +9,6 @@ using std::cout, std::cin, std::endl;
 
 bool managerUi::ManagerUI::run()
 {
-    controller->load();
     cout << "\n\n\nManager interface -->" << endl;
     char choice;
     do

@@ -80,7 +80,6 @@ void repository::CsvFileRepository::saveToFile(const std::string& fileName)
 void repository::CsvFileRepository::loadFromFile()
 {
     const std::string& fileName = "data.csv";
-    Scooters.clear();
     ifstream file(fileName);
     std::string line;
     std::getline(file, line);
@@ -198,7 +197,7 @@ shared_ptr<vector<Scooter>> repository::CsvFileRepository::getAllScootersReserve
     auto result = std::make_shared<std::vector<Scooter>>();
     for (const Scooter& scooter : Scooters)
     {
-        if (scooter.getUser() == userName && scooter.getStatus() == PARKED)
+        if (scooter.getUser() == userName && scooter.getStatus() == RESERVED)
         {
             result->push_back(scooter);
         }
@@ -216,4 +215,9 @@ repository::CsvFileRepository &repository::CsvFileRepository::operator=(const re
     Scooters = other.Scooters;
 
     return *this;
+}
+
+repository::CsvFileRepository::CsvFileRepository()
+{
+    loadFromFile();
 }

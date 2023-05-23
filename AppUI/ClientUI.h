@@ -30,7 +30,6 @@ namespace clientUi
         /// \return true to go back to main UI, false to exit
         bool run();
 
-
         /// Method for exiting the app
         void exit();
 

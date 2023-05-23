@@ -232,8 +232,3 @@ shared_ptr<vector<Scooter>> controller::Controller::getAllReservedScootersOfAnUs
     return repository->getAllScootersReservedByAnUser(std::move(userName));
 }
 
-
-void controller::Controller::load()
-{
-    repository->loadFromFile();
-}
