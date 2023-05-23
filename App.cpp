@@ -16,7 +16,7 @@ int main() {
 //    // Tests
 //    testAllRepo();
 //    testAllController();
-//
+
 
     // In memory
     shared_ptr<CrudRepository> repo_memo;
@@ -25,6 +25,7 @@ int main() {
     auto repo_csv = make_shared<CsvFileRepository>();
     shared_ptr<CrudRepository> repo_csv_crude =repo_csv;
     shared_ptr<Controller> ctrl;
+    // Chose save actions and create ctrl
     if (choseIfSaveActions())
     {
         ctrl = make_shared<Controller>(repo_csv_crude);
@@ -33,10 +34,12 @@ int main() {
     {
         ctrl = make_shared<Controller>(repo_memo);
     }
+    // Create UI
     auto managerUI = make_shared<ManagerUI>(ctrl);
     auto clientUI = make_shared<ClientUI>(ctrl);
     auto mainUI = make_shared<MainUI>(managerUI, clientUI);
 
+    // Run
     mainUI->runMain();
     repo_csv->saveToFile();
     return 0;
