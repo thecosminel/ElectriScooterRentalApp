@@ -1,2 +1,2 @@
 CMakeFiles/ElectricScooterRentalApp.dir/AppRepository/RepositoryTest.cpp.obj: \
- W:\Facultate\OOP\ScooterApp\AppRepository\RepositoryTest.cpp
+ D:\CLion\Labor\ 7\AppRepository\RepositoryTest.cpp
