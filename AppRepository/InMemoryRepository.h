@@ -18,9 +18,7 @@ namespace repository
     private:
         vector<Scooter> Scooters;
 
-        /// method for loading from file
-        /// \param fileName
-        void loadFromFile(const std::string& fileName = "data.csv");
+
 
     public:
         ///default constructor
@@ -78,5 +76,9 @@ namespace repository
         /// \param userName
         /// \return matching scooters
         shared_ptr<vector<Scooter>> getAllScootersReservedByAnUser (string userName) override;
+
+        /// method for loading from file
+        /// \param fileName
+        void loadFromFile(const std::string& fileName = "data.csv");
     };
 }
