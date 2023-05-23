@@ -25,6 +25,7 @@ bool clientUi::ClientUI::run()
         cout << "  4. Print available scooters to reserve" << endl; // Implement
         cout << "  5. Reserve scooter" << endl;
         cout << "  6. Print my reserved scooters" << endl; // Implement
+        cout << "  7. Display all scooters sorted ascending by ID" << endl;
         cout << "  R. Return to main UI" << endl;
         cout << "  X. Close app" << endl;
         cin >> choice;
@@ -55,6 +56,10 @@ bool clientUi::ClientUI::run()
             case '6':
                 cout << "Print my reserved scooters: ";
                 displayScootersReservedByUser();
+                break;
+            case '7':
+                cout << "Display all scooters sorted ascending by ID: ";
+                displayAllScootersSortedByID();
                 break;
             case 'R':
             case 'r':
@@ -135,3 +140,8 @@ void clientUi::ClientUI::displayScootersThatCanBeReserved()
     printScooterContainer(scooters);
 }
 
+void clientUi::ClientUI::displayAllScootersSortedByID()
+{
+    shared_ptr<vector<Scooter>> scooters =controller->sortScootersByID();
+    printScooterContainer(scooters);
+}

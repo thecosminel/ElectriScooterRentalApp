@@ -48,6 +48,9 @@ namespace clientUi
         /// Method for displaying reservable scooters (parked)
         void displayScootersThatCanBeReserved();
 
+        /// Method to display certain scooters sorted by ID
+        void displayAllScootersSortedByID();
+
         /// Method for reserving a scooter
         void reserveScooter();
     };
