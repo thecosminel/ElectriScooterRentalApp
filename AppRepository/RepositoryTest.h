@@ -4,20 +4,30 @@
 #pragma once
 
 #include "CrudRepository.h"
+#include "CsvFileRepository.h"
+#include "InMemoryRepository.h"
 
 /// unit test for add method
 /// \param repository
-void testAddScooter(repository::Repository& repository);
+void testAddScooterCsv(repository::CsvFileRepository& repository);
 
 /// unit test for remove method
 /// \param repository
-void testRemoveScooter(repository::Repository& repository);
+void testRemoveScooterCsv(repository::CsvFileRepository& repository);
 
 /// unit test for update method
 /// \param repository
-void testUpdateScooter(repository::Repository& repository);
+void testUpdateScooterCsv(repository::CsvFileRepository& repository);
 
-void testSaveToFile(repository::Repository& repository, const std::string& fileName);
+void testSaveToFileCsv(repository::CsvFileRepository& repository, const std::string& fileName);
+
+void testAddScooterInMemory(repository::InMemoryRepository& repository);
+
+void testDeleteScooterInMemory(repository::InMemoryRepository& repository);
+
+void testUpdateScooterInMemory(repository::InMemoryRepository& repository);
+
+void testSaveToFileInMemory(repository::InMemoryRepository& repository, const std::string& fileName);
 
 void testAllRepo();
 
