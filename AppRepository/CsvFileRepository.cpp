@@ -77,9 +77,8 @@ void repository::CsvFileRepository::saveToFile(const std::string& fileName)
     }
 }
 
-void repository::CsvFileRepository::loadFromFile()
+void repository::CsvFileRepository::loadFromFile(const std::string& fileName)
 {
-    const std::string& fileName = "data.csv";
     ifstream file(fileName);
     std::string line;
     std::getline(file, line);

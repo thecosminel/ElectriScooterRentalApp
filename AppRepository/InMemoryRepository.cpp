@@ -45,9 +45,8 @@ void repository::InMemoryRepository::updateScooterInfo(const Scooter& oldScooter
     }
 }
 
-void repository::InMemoryRepository::loadFromFile()
+void repository::InMemoryRepository::loadFromFile(const std::string& fileName)
 {
-    const std::string& fileName = "data.csv";
     ifstream file(fileName);
     std::string line;
     std::getline(file, line);

@@ -20,7 +20,7 @@ namespace repository
 
         /// method for loading from file
         /// \param fileName
-        void loadFromFile();
+        void loadFromFile(const std::string& fileName = "data.csv");
 
     public:
         ///default constructor
