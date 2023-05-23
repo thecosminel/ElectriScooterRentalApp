@@ -1,5 +1,5 @@
 #include "AppUI/MainUI.h"
-//#include "AppController/ControllerTest.h"
+#include "AppController/ControllerTest.h"
 #include "AppRepository/RepositoryTest.h"
 //#include "AppRepository/CrudRepository.h"
 #include "AppRepository/CsvFileRepository.h"
@@ -36,4 +36,5 @@ int main() {
 //    repo_csv->saveToFile();
 //    return 0;
 testAllRepo();
+testAllController();
 }
