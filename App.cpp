@@ -28,8 +28,7 @@ int main() {
     shared_ptr<CsvFileRepository> repo_in_CSV;
     if (choseIfSaveActions())
     {
-        repo_in_CSV = make_shared<CsvFileRepository>();
-        repo = repo_in_CSV;
+        repo = make_shared<CsvFileRepository>();
     }
     else
     {
@@ -43,8 +42,6 @@ int main() {
 
     // Run
     mainUi->runMain();
-    // Exit
-    repo_in_CSV->saveToFile();
 
     return 0;
 

@@ -12,7 +12,7 @@ using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl, std::
 
 namespace repository {
     class CrudRepository {
-    private:
+    protected:
         vector <Scooter> Scooters;
 
     public:

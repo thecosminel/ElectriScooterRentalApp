@@ -15,10 +15,6 @@ using std::vector, std::shared_ptr, std::string, std::ifstream, std::endl;
 namespace repository
 {
     class InMemoryRepository : public CrudRepository{
-    private:
-        vector<Scooter> Scooters;
-
-
 
     public:
         ///default constructor
