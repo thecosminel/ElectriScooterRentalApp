@@ -17,31 +17,35 @@ int main() {
 //    testAllRepo();
 //    testAllController();
 
-
-    // In memory
-    shared_ptr<CrudRepository> repo_memo;
-    repo_memo = make_shared<InMemoryRepository>();
-    // CSV
-    auto repo_csv = make_shared<CsvFileRepository>();
-    shared_ptr<CrudRepository> repo_csv_crude =repo_csv;
+    // Define
+    shared_ptr<CrudRepository> repo;
     shared_ptr<Controller> ctrl;
+    shared_ptr<MainUI> mainUi;
+    shared_ptr<ManagerUI> managerUi;
+    shared_ptr<ClientUI> clientUi;
+
     // Chose save actions and create ctrl
+    shared_ptr<CsvFileRepository> repo_in_CSV;
     if (choseIfSaveActions())
     {
-        ctrl = make_shared<Controller>(repo_csv_crude);
+        repo_in_CSV = make_shared<CsvFileRepository>();
+        repo = repo_in_CSV;
     }
     else
     {
-        ctrl = make_shared<Controller>(repo_memo);
+        repo = make_shared<InMemoryRepository>();
     }
-    // Create UI
-    auto managerUI = make_shared<ManagerUI>(ctrl);
-    auto clientUI = make_shared<ClientUI>(ctrl);
-    auto mainUI = make_shared<MainUI>(managerUI, clientUI);
+
+    ctrl = make_shared<Controller>(repo);
+    managerUi = make_shared<ManagerUI>(ctrl);
+    clientUi = make_shared<ClientUI>(ctrl);
+    mainUi = make_shared<MainUI>(managerUi, clientUi);
 
     // Run
-    mainUI->runMain();
-    repo_csv->saveToFile();
+    mainUi->runMain();
+    // Exit
+    repo_in_CSV->saveToFile();
+
     return 0;
 
 }
